@@ -1,0 +1,266 @@
+//rest of screen height
+.page-home {
+	.full-header-ctr{
+		flex-grow:1;
+		@include tertiary-section-colors;
+		display:flex;
+		flex-wrap:wrap;
+		align-items: center;
+		justify-content: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		position: relative;
+
+		&:after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 9;
+			background: $black;
+			opacity: .8;
+		}
+
+		> div{
+			position: relative;
+			z-index: 99;
+			@include breakpoint(small-desktop){
+				width:100%;
+			}
+		}
+
+		.full-header-intro{
+			padding: 100px 0;
+			box-sizing:border-box;
+			display:flex;
+			align-items:center;
+			> div{
+				margin-bottom:30px;
+				text-align: center;
+			}
+			h1{
+				font-size:$body-text;
+				line-height:1;
+				font-weight:$regular;
+				margin-bottom:$small-spacing;
+			}
+			a{
+				margin: $x-small-spacing/5;
+			}
+			p{
+				font-size:$x-large-heading;
+				font-weight:$bold;
+				line-height:1;
+				margin-bottom:$medium-spacing*2;
+				@include breakpoint(x-large-desktop){
+					font-size:4vw;
+				}
+				@include breakpoint(small-desktop){
+					font-size:$x-large-heading;
+				}
+				@include breakpoint(tablet){
+					font-size:8vw;
+				}
+				@include breakpoint(mobile){
+					font-size:9vw;
+				}
+
+				> span {
+					color: $blue;
+				}
+			}
+		}
+		.full-header-feature{
+			position:relative;
+			.feature-img-ctr{
+				overflow:hidden;
+			}
+			img{
+				width:100%;
+				transition:transform 1s;
+				@media only screen and (min-width: 768px){
+					height:100%;
+					object-fit:cover;
+					min-height:600px;
+				}
+			}
+			> a{
+				@media only screen and (max-width: 767px){
+					display:flex;
+					flex-direction:column-reverse;
+				}
+				&:hover{
+					.feature-img-ctr img{
+						transform:scale(1.1);
+					}
+				}
+			}
+			.feature-cta-box{
+				@include primary-section-colors;
+				background-color:$alt-color;
+				padding:$medium-spacing;
+				text-decoration:none;
+				z-index:9;
+				@media only screen and (min-width: 768px){
+					position:absolute;
+					bottom:0;
+					right:0;
+					display:flex;
+					border-radius:$border-radius 0 0 0;
+					align-items:flex-end;
+					background-color:$bg-color;
+				}
+				
+				.feature-name{
+					@media only screen and (min-width: 768px){
+						padding-right:$medium-spacing;
+					}
+					@include icon-left();
+					&:before{
+						width:42px;
+				        height:47px;
+				        background-image:url('../img/icons/general/fire-white.svg'), url('../img/icons/general/red-hex.svg');
+				        background-size:17px 23px, 100%; 
+				        margin-right:$small-spacing;
+					}
+					h3{
+						font-size:$small-heading;
+						margin-bottom:0;
+						@media only screen and (max-width: 767px){
+							font-size:$body-text;
+						}
+					}
+					p{
+						line-height:1;
+						@media only screen and (max-width: 767px){
+							font-size:$x-small-body-text;
+						}
+					}
+				}
+				.feature-price{
+					font-size:5rem;
+					font-weight:$bold;
+					line-height:1;
+					@media only screen and (max-width: 767px){
+						margin-top:$x-small-spacing;
+						font-size:$small-heading;
+						text-align:right;
+					}
+					span{
+						font-size:$small-body-text;
+					}
+				}
+			}
+		}
+
+		.full-header-search {
+			.search-form {
+				form {
+					display: initial;
+
+					.form-controls {
+						margin: 0;
+						align-items: center;
+						.form-group {
+							margin-left: 0;
+							flex-basis: initial;
+
+							&:first-child {
+								@include breakpoint(tablet){
+									padding-top: 30px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	.about-intro {
+		display: flex;
+
+		@include breakpoint(mobile) {
+			display: block;
+		}
+
+		> div {
+			width: 50%;
+
+			@include breakpoint(mobile) {
+				width: 100%;
+			}
+		}
+
+		.intro {
+			padding: $spacing;
+			display: flex;
+			align-items: center;
+			h1 {
+				margin-bottom: $x-small-spacing
+			}
+		}
+
+		.about-hero {
+			min-height: 500px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+
+			@include breakpoint(mobile) {
+				min-height: 250px;
+			}
+		}
+	}
+
+	.partner-logos{
+		@include section-spacing;
+	    background: $light-grey;
+
+	    ul{
+	        display: flex;
+	        justify-content:center;
+	        flex-wrap: wrap;
+
+	        > *{
+	            display:flex;
+	            flex-direction:column;
+	            justify-content:center;
+	            text-align:center;
+	            padding: 30px;
+
+	            flex: 0 0 14.285714286%;
+	            max-width: 14.285714286%;
+
+	            @include breakpoint(desktop) {
+	                flex: 0 0 25%;
+	                max-width: 25%;
+	            }
+
+	            @include breakpoint(tablet) {
+	                flex: 0 0 33.333333333%;
+	                max-width: 33.333333333%;
+	            }
+
+	            @include breakpoint(mobile) {
+	                flex: 0 0 50%;
+	                max-width: 50%;
+	            }
+
+	        }
+
+			img{
+				max-height: 100px;
+				max-width: 160px;
+				align-self: center;
+				@include breakpoint(mobile) {
+					max-width: 100%;
+				}
+			}
+	    }
+	}
+}

@@ -1,0 +1,322 @@
+/* ==========================================================================
+Footer CSS
+========================================================================== */
+
+// dependencies = typography, ctr, button, form
+
+/* Variables */
+$large-spacing:         140px;
+$small-spacing:         20px;
+$pad:                   $pad;
+
+$border-radius:         $border-radius;
+
+$accent-color:          $accent-color;
+$bg-color:              $bg-color;
+$text-color:            $text-color;
+$secondary-bg-color:    #313338; // footer background
+$tertiary-bg-color:     #FDD35D; // contact form background
+$bg-text-color:         $bg-text-color;
+
+
+$body-text:             $body-text;
+$line-height:           $line-height;
+
+
+
+// Layout *******************
+
+.footer-enquiry{
+    padding: $large-spacing/2 0;
+    background-color: $accent-color;
+    color: white;
+
+    h1{
+        @include breakpoint(min-tablet){
+            font-size: 3.6rem;
+            margin-bottom: $small-spacing*2;
+        }
+        @include breakpoint(min-small-desktop){
+            text-align: center;
+        }
+    }
+
+    .footer-enquiry-form{
+        @include breakpoint(min-laptop){
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .form-row{
+        @include breakpoint(min-small-desktop){
+            display: flex;
+            margin: $small-spacing*-0.5;
+        }
+        @include breakpoint(min-large-desktop){
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        > .form-group{
+            margin: 0;
+
+            @include breakpoint(min-small-desktop){
+                padding: $small-spacing/2;
+                flex: 1;
+            }
+
+            textarea {
+            	min-height: 200px;
+            }
+        }
+    }
+
+    form > .form-group{
+        &:last-of-type{
+            margin-bottom: 0;
+            @include breakpoint(min-small-desktop){
+                text-align: center;
+            }
+        }
+    }
+
+    .form-control {
+        &::placeholder {
+            color: $black;
+        }
+
+        border: none;
+    }
+
+    .button{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .thank-you {
+        text-align: center;
+    }
+}
+
+.site-footer{
+    padding: $large-spacing/2 0 $small-spacing;
+    background-color: $secondary-bg-color;
+    color: $bg-text-color;
+    a{
+        color: $bg-text-color;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li{
+            a{
+                display: block;
+            }
+        }
+    }
+
+    .footer-links-list{
+        display: flex;
+        flex-wrap: wrap;
+        @include breakpoint(min-tablet){
+            //margin: $small-spacing*-2;
+            padding-bottom: $large-spacing/2;
+        }
+        @include breakpoint(min-laptop){
+            margin: $small-spacing*-1;
+        }
+
+        > div{
+            margin-bottom: $large-spacing/2;
+            @include breakpoint(min-tablet){
+                padding: $small-spacing*2 0;
+                width: 50%;
+                box-sizing: border-box;
+                margin-bottom: 0;
+            }
+            @include breakpoint(min-laptop){
+                width: ((100/10)*2)*1%;
+                padding: $small-spacing;
+            }
+            @include breakpoint(min-x-large-desktop){
+                width: (100/6)*1%;
+            }   
+
+            @include breakpoint(tablet){
+                width: 50%;
+            }
+
+            @include breakpoint(mobile){
+                width: 100%;
+            }
+
+            &:nth-of-type(1), &:nth-of-type(4){
+                @include breakpoint(min-laptop){
+                    width: ((100/10)*3)*1%;
+                }
+                @include breakpoint(min-x-large-desktop){
+                    width: ((100/6)*2)*1%;
+                }
+            }
+
+
+        }
+
+        .footer-contact{
+            p{
+                margin-top: 0;
+            }
+        }
+
+        .footer-list{
+        	margin-left: 0;
+
+            ul {
+
+                margin-left: 0;
+
+                li {	
+                	margin-bottom: 0;
+                    padding: 5px 0;
+                	a {
+                    	padding: 5px 0;
+                	}
+                }
+            }
+        }
+
+        .footer-newsletter{
+            @include breakpoint(min-large-desktop){
+                padding-left: $large-spacing/2;
+            }
+            @include breakpoint(min-x-large-desktop){
+                padding-left: $large-spacing;
+            }
+            h3{
+               margin-bottom: $small-spacing; 
+            }
+            .button{
+                padding-top: 15px;
+                padding-bottom: 15px;
+                @include breakpoint(min-x-large-desktop){
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .footer-logo{
+        margin-bottom: $small-spacing*2;
+        img{
+            max-width: 100%;
+            max-height: 100px;
+        }
+    }
+
+    .social-links{
+        list-style-type: none !important;
+        margin: 0 !important;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin: $small-spacing*-0.5;
+
+        li {
+            list-style-type: none !important;
+        }
+        a{
+            padding: $small-spacing/2 $small-spacing $small-spacing/2 0;
+            transition: opacity 0.3s;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .group-logo {
+        padding: 30px 0;
+
+        img {
+            max-width: 120px;
+        }
+    }
+
+    .contact-info{
+        list-style-type: none;
+        margin: 0 !important;
+        padding: 15px 0 0 0 ;
+        margin-bottom: $small-spacing;
+        li{
+            a{
+                display: flex;
+                &:before{
+                    content: '';
+                    width: 17px;
+                    height: 17px;
+                    margin-right: $small-spacing/2;
+                    margin-top: 7px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+        .contact-tel{
+            a{
+                &:before{
+                    background-image: url('/themes/ubt/img/icons/general/phone.svg');
+                }
+            }
+        }
+        .contact-email{
+            a{
+                &:before{
+                    background-image: url('/themes/ubt/img/icons/general/mail-white.svg');
+                }
+            }
+        }
+    }
+
+    .footer-info{
+        border-top: 1px solid $bg-text-color;
+        padding-top: $small-spacing;
+        padding-bottom: $small-spacing;
+        @include breakpoint(min-small-desktop){
+            display: flex;
+            justify-content: space-between;
+            padding-top: $small-spacing;
+        }
+
+        @include breakpoint(tablet){
+            padding-top: $small-spacing;
+            padding-bottom: $small-spacing;
+
+        }
+
+        p{
+            margin-top: 0;
+        }
+        a{
+            text-decoration: underline;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+
+    .footer-legal {
+        padding-top: $small-spacing;
+        font-size: 12px;
+
+        p {
+            font-size: 12px;            
+        }
+    }
+}

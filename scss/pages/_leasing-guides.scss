@@ -1,0 +1,238 @@
+/* ==========================================================================
+Leasing Guides CSS
+========================================================================== */
+
+.leasing-guide-page{
+	.full-header:before{
+		background-image:url('../img/guide/wheel-unsplash.jpg');
+	}
+}
+
+.leasing-intro{
+	@include section-spacing;
+	@include primary-section-colors;
+	.intro-ctr{
+		display:flex;
+		align-items: center;
+		flex-direction: row-reverse;
+		@include breakpoint(small-desktop){
+			flex-direction: column;
+		}
+		.intro-content{
+			width:50%;
+			box-sizing: border-box;
+			@include breakpoint(small-desktop){
+				width:100%;
+			}
+		}
+		.intro-aside{
+			width:50%;
+			text-align:center;
+			@include breakpoint(small-desktop){
+				display:none;
+			}
+			img{
+				width:100%;
+				height:auto;
+				max-width:65%;
+			}
+		}
+	}	
+}
+
+
+.personal-leasing{
+	display:flex;
+	@include secondary-section-colors;
+	@include breakpoint(small-desktop){
+		flex-direction:column;
+	}
+	.personal-leasing-content{
+		width:50%;
+		display: flex;
+    	align-items: center;
+		@include section-spacing;
+		@include breakpoint(small-desktop){
+			width:100%;
+		}
+		h1{
+			font-size: $large-heading;
+		}
+	}
+	.personal-leasing-img{
+		width:50%;
+		background-image:url('../img/guide/personal-unsplash.jpg');
+		background-size: cover;
+		background-position: right bottom;
+		min-height:700px;
+		@include breakpoint(small-desktop){
+			width:100%;
+		}
+		@include breakpoint(small-desktop){
+			min-height:500px;
+		}
+	}
+}
+
+.business-leasing{
+	display:flex;
+	@include tertiary-section-colors;
+	@include breakpoint(small-desktop){
+		flex-direction:column-reverse;
+	}	
+	.business-leasing-content{
+		@include section-spacing;
+		width:50%;
+		display: flex;
+    	align-items: center;
+    	@include breakpoint(small-desktop){
+			width:100%;
+		}
+		h1{
+			font-size: $large-heading;
+		}
+	}
+	.business-leasing-img{
+		width:50%;
+		background-image:url('../img/guide/business-unsplash.jpg');
+		background-size: cover;
+		background-position: right bottom;
+		min-height:700px;
+		@include breakpoint(small-desktop){
+			width:100%;
+		}
+		@include breakpoint(small-desktop){
+			min-height:500px;
+		}	
+	}
+}
+
+
+.process-extended{
+	@include section-spacing;
+	
+	.process-strip-ctr{
+		display: flex;
+		flex-wrap:wrap;
+		margin:-$x-large-spacing/2;
+		@include breakpoint(small-desktop){
+			margin:-$small-spacing;
+		}
+		.process-step{
+			margin-top:0;
+			width:50%;
+			box-sizing:border-box;
+			@include breakpoint(small-desktop){
+				width: 100%;
+			}
+
+			
+			&:not(:first-child){
+				display: flex;
+				align-items:center;
+				@include breakpoint(mobile){	
+					flex-direction: column;
+				}
+			}
+			.process-step-img{
+				margin:0;
+			}
+			.process-step-content{
+				padding-left:$small-spacing*2;
+				box-sizing:border-box;
+				@include breakpoint(mobile){
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+.leasing-qna{
+	@include section-spacing;
+	@include primary-section-colors;
+	.leasing-qna-ctr{
+		display: flex;
+		@include breakpoint(small-desktop){
+			flex-direction:column;
+		}
+	}
+
+	.leasing-questions{
+		width:70%;
+		box-sizing:border-box;
+		padding-right:$pad;
+		@include breakpoint(laptop){
+			width:60%;
+		}
+		@include breakpoint(small-desktop){
+			width:100%;
+			padding-right:0;
+		}
+	}
+	.leasing-contact{
+		width: 30%;
+		@include breakpoint(laptop){
+			width:40%;
+		}
+		@include breakpoint(small-desktop){
+			width:100%;
+			margin-top:$x-large-spacing/2;
+		}
+		.leasing-contact-ctr{
+			@include secondary-section-colors;
+			padding:$x-large-spacing/2;
+			position:sticky;
+			top:0;
+		}
+		.button{
+			margin-top:$small-spacing*2;
+		}
+	}
+
+	.question{
+		padding:$x-large-spacing/2 0 0 0;
+		border-top:1px solid darken($line-color, 30%);
+		
+		.question-content{
+			@include breakpoint(min-tablet){
+				padding-left:120px;
+				background-image: url('../img/icons/ideal-icon.svg');
+				background-repeat: no-repeat;
+				background-position:top left;
+			}
+
+		}
+		.question-report{
+			background-color:lighten($accent-color, 40%);
+			display: flex;
+			box-sizing:border-box;
+			padding:$small-spacing;
+			align-items:center;
+			justify-content: flex-end;
+			margin-top:$x-large-spacing/2;
+			.button{
+				font-size:$body-text;
+				font-weight:bold;
+				padding:$small-spacing/2 $small-spacing;
+				border-radius:16px;
+				margin-left: $small-spacing/2;
+				background-color:$secondary-color;
+				&:hover{
+					background-color:lighten($secondary-color, 5%);
+				}
+			}
+			p{
+				margin-right:$small-spacing;
+			}
+			.thumbs-up{
+				display:none;
+			}
+
+			&.active{
+				.thumbs-up{display: block;}
+				.button{display:none;}
+			}
+		}
+	}
+}

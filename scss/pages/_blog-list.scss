@@ -1,0 +1,35 @@
+/* ==========================================================================
+Blog List CSS
+========================================================================== */
+
+.blog-list-ctr{
+	.blog-list-strip{
+		background-color:$bg-color;
+		.blog-list-strip-intro{
+			@include section-spacing;
+			padding-top:$medium-large-spacing;
+			padding-bottom:$large-spacing;
+			@include breakpoint(laptop){
+				padding-top:$medium-large-spacing;
+			}
+		}
+	}
+	.blog-list{
+		background-color:$alt-color;
+	}
+	.blog-item{
+		.blog-item-icon{
+			background-image: url(../img/icons/general/book-white.svg), url(../img/icons/general/green-hex.svg), url(../img/icons/general/grey-hex.svg);
+		}
+		> a{
+			&:hover{
+				.blog-item-content{
+					background-color:$bg-color;
+				}
+				.blog-item-icon{
+					background-image: url(../img/icons/general/book-white.svg), url(../img/icons/general/green-hex.svg), url(../img/icons/general/white-hex.svg);
+				}
+			}
+		}
+	}
+}

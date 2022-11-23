@@ -1,0 +1,243 @@
+/* ==========================================================================
+Search Bar CSS
+========================================================================== */
+
+.popout-form{
+    background: $black;
+
+}
+
+
+.full-header-search{
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    form{
+        display: flex;
+
+        @include breakpoint(below-desktop) {
+            display: block;
+        }
+    }
+
+    .form-row{
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+    }
+
+    .form-group{
+
+        flex-basis: 15.9159159%;
+        margin-left: .9009009%;
+        justify-content: flex-end;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        padding-top: 0;
+
+        @include breakpoint(below-wide-desktop) {
+            flex-basis: 23.8738739%;
+            margin-left: 1.1261261%;
+        }
+
+        @include breakpoint(tablet) {
+            flex-basis: 48%;
+        }
+
+        @include breakpoint(mobile) {
+            flex-basis: 100%;
+            margin-left: 0;
+        }
+
+        
+        &:nth-child(4n+1){
+            @include breakpoint(below-wide-desktop) {
+                margin-left: 0;
+            }
+        }
+
+        &:nth-child(6n+1){
+            margin-left: 0;
+
+            @include breakpoint(below-wide-desktop) {
+                margin-left: 1.1261261%;
+            }
+        }
+
+
+        &:nth-child(2n+1){
+
+            @include breakpoint(tablet) {
+                margin-left: 0;
+            }
+        }
+
+        &:first-child{
+            margin-left: 0;
+        }
+
+        label {
+        	color: white;
+        }
+    }
+
+    .form-controls{
+        flex: 1;
+        margin-left: 20px;
+
+        @include breakpoint(below-desktop) {
+            margin-left: 0;
+        }
+    }
+
+    .advanced-toggle{
+        margin-top: 0;
+    }
+
+
+}
+
+
+.search-form{
+	.form-controls{
+		display:flex;
+		justify-content:space-between;
+		@include breakpoint(tablet){
+			flex-direction:column-reverse;
+		}
+		.form-group{
+			
+			@include breakpoint(min-tablet){
+				margin-bottom:0;
+			}
+		}
+
+		.price-switch{
+			> div{
+				align-self: center;
+				padding-left:$small-spacing;
+			}
+		}
+	}
+
+	.form-row{
+		@include breakpoint(min-tablet){
+			padding-bottom:$small-spacing*2;
+			margin:$x-small-spacing*-1  $small-spacing*-1;
+		}
+		> div{
+			@include breakpoint(min-tablet){
+				padding:$x-small-spacing $small-spacing;
+				margin-bottom:0;
+			}
+		}
+	}
+
+	.form-group{
+		.form-control{
+			background-color:$secondary-color;
+			color:$bg-text-color;
+			border-radius:$border-radius $border-radius 0 0;
+			border:0;
+			border-bottom:1px solid $bg-text-color;
+			padding:$small-spacing;
+			&::placeholder{
+				color:rgba($bg-text-color, 0.4);
+			}
+			&:focus{
+				border-color: $accent-color;
+			}
+		}
+		.select-css{
+			background-image: url('../img/icons/general/arrow-white.svg'), linear-gradient(to bottom, $secondary-color 0%, $secondary-color 100%);
+			padding: 20px 38px 20px 20px;
+		}
+		label{
+			color:$bg-text-color;
+		}
+	}
+}
+
+.search-bar{
+	@include tertiary-section-colors;
+	@include section-spacing;
+	padding:$medium-spacing 0;
+	@include breakpoint(laptop){
+		padding:$medium-spacing 0;
+	}
+	form{
+		display:flex;
+		align-items:center;
+		justify-content:flex-end;
+		@include breakpoint(tablet){
+			flex-direction: column;
+			align-items:inherit;
+		}
+		.form-row{
+			padding:0;
+			@include breakpoint(ie11){
+				flex-grow:1;
+			}
+			@include breakpoint(tablet){
+				display: none;
+				margin-top:$small-spacing;
+			}
+		}
+		.form-group{
+			min-width:19vw;
+		}
+		.legend{
+			margin-right:auto;
+			font-weight:bold;
+			@include breakpoint(tablet){
+				width:100%;
+				display:flex;
+				align-items:center;
+				justify-content:space-between;
+			}
+			&:hover{
+				@include breakpoint(tablet){
+					cursor:pointer;
+				}
+			}
+			&:after{
+				@include breakpoint(tablet){
+					content:'';
+					width:20px;
+					height:20px;
+					background:
+					linear-gradient($bg-text-color,$bg-text-color),
+					linear-gradient($bg-text-color,$bg-text-color);
+					background-position:center;
+					background-size: 50% 2px,2px 50%; /*thickness = 2px, length = 50% (25px)*/
+					background-repeat:no-repeat;
+					display: inline-block;
+					border:2px solid $bg-text-color;
+					border-radius:20px;
+				}
+			}
+		}
+	}
+	&.active{
+		.form-row{
+			@include breakpoint(tablet){
+				display:block;
+			}
+		}
+		.legend{
+			&:after{
+				@include breakpoint(tablet){
+					background: linear-gradient($bg-text-color,$bg-text-color);
+					background-size: 50% 2px;
+					background-position: center;
+	    			background-size: 50% 2px;
+	    			background-repeat: no-repeat;
+				}
+			}
+		}
+	}
+}

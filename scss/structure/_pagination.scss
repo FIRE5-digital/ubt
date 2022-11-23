@@ -1,0 +1,60 @@
+/* ==========================================================================
+Pagination CSS
+========================================================================== */
+
+.pagination-holder {
+	display:flex;
+	justify-content:space-between;
+	@include section-spacing-top;
+	align-items:center;
+	@include breakpoint(tablet) {
+		flex-direction:column;
+		text-align: center;
+		margin-top:$medium-spacing;
+	}
+}
+
+.pagination{
+	margin:20px 0 0 0 !important;
+	padding:0 !important;
+	list-style-type:none !important;
+	display: inline-flex;
+	flex-wrap:wrap;
+	justify-content:center;
+
+	li{
+		margin: 0 !important;
+		list-style-type: none !important;
+
+		a, span {
+			padding:$x-small-spacing;
+			display:block;
+			text-decoration:none;
+
+			&:hover{
+				cursor: pointer;
+			}
+		}
+
+		&.disabled{
+			a, span{
+				color:lighten($text-color,40%);
+				&:hover{
+					cursor:default
+				}
+			}
+		}
+
+		&.active{
+			a, span{
+				background-color:$accent-color;
+				color:$bg-text-color;
+				font-weight:bold;
+				border-radius: 4px;
+				&:hover{
+					cursor:default
+				}
+			}
+		}
+	}
+}

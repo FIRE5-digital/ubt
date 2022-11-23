@@ -1,0 +1,58 @@
+.breadcrumbs{
+    background: $light-grey;
+    font-size: .75em;
+    text-transform: uppercase;
+
+    order: 2;
+
+    @include breakpoint(mobile) {
+        font-size: .65em;
+    }
+
+    .full-width-container{
+        
+    }
+
+    li{
+        position: relative;
+
+        
+        
+        &:not(:last-child){
+            padding-right: 1.428571429em;
+            margin-right: .714285714em;
+
+            @include breakpoint(mobile) {
+				padding-right: 1em;
+				margin-right: .2em;
+        	}
+
+            &:before{
+                content: '';
+                background: url('../img/icon-arrow-right-grey.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 6px;
+                height: 6px;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                margin-top: -3px;
+                
+            }
+
+        }
+
+        &:last-child{
+            a{
+                color: $black;
+                font-weight: bold;
+            }
+        }
+    }
+
+    a{
+        color: $black;
+        text-decoration: none;
+    }
+}

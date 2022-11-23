@@ -1,0 +1,50 @@
+/* ==========================================================================
+Layout CSS
+========================================================================== */
+
+/* Sidebar */
+
+.main-side{
+    @include breakpoint(min-small-desktop){
+        display: flex;   
+    }
+    .main{
+        @include breakpoint(min-small-desktop){
+            width:55%;
+            box-sizing:border-box;
+        }
+        @include breakpoint(min-large-desktop){
+            width:60%;
+        }
+    }
+    .aside{
+        @include breakpoint(min-small-desktop){
+            width:45%;
+            padding-right:$pad;
+            box-sizing:border-box;
+        }
+        @include breakpoint(min-large-desktop){
+            width:40%;
+        }
+    }
+}
+
+
+/* Equal Column */
+.equal-col{
+    @include breakpoint(min-small-desktop){
+        display: flex;   
+    }
+    .main{
+        @include breakpoint(min-small-desktop){
+            width:50%;
+            box-sizing:border-box;
+        }
+    }
+    .aside{
+        @include breakpoint(min-small-desktop){
+            width:50%;
+            box-sizing:border-box;
+        }
+    }
+}

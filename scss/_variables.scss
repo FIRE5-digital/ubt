@@ -1,0 +1,82 @@
+/* --------------------------------------------------------------------------------------------*/
+/*  SCSS VARIABLES
+/* --------------------------------------------------------------------------------------------*/
+
+/* COLOURS */
+/* Descriptive variables */
+$black:     			#222429;
+$white:     			#ffffff;
+$grey:      			#EFEFEF;
+$dark-grey:				#8595A4;
+$go:    				#00BDA5;
+$cms:	      			#66C7FD;
+$crm: 					#EF5366;
+$plus:					#FED451;
+$light-grey:			#eeeeee;
+$orange:				#F87F00;
+$blue: 					#01ABE8;
+$red: 					#E25A5A;
+
+$lightest-green:		#83D653;
+$light-green:			#58C25F;
+$dark-green:			#3DAD5B;
+$darkest-green:			#01997F;
+
+
+
+//Text Colours
+$bg-color:				$white;
+$text-color: 			$black;
+$accent-color: 			$dark-green;
+$secondary-color:		$dark-grey;
+$tertiary-color:		$black;	
+$bg-text-color:			$white;
+$alt-color:				$grey;
+
+// Other Colours
+$line-color: 			lighten($black, 50%);
+$error-color: 			$crm;
+$warning-color:			coral;
+$caution-color:			cornflowerblue;
+$success-color:			$go;
+
+
+
+/* Dimensions */
+$pad: 					3vw;
+$x-large-spacing: 		100px;
+$large-spacing:			62px;
+$medium-large-spacing:	38px;
+$medium-spacing:		23px;
+$small-spacing:			16px;
+$x-small-spacing:		10px;
+
+$section-spacing:		70px;
+$max-width: 			100%;
+
+$border-radius:			4px;
+
+$spacing:				40px;
+$small-spacing:			20px;
+
+
+/* Fonts */
+$x-large-heading:		6.8rem; 
+$large-heading:			4.2rem; 
+$medium-heading:		2.9rem;
+$small-heading:			2.6rem;
+$x-small-heading:		2.4rem;
+
+$body-text:				1.9rem;
+$large-body-text:		2.2rem;
+$small-body-text:		1.7rem;
+$x-small-body-text:		1.5rem;
+
+$line-height:			1.6;
+
+
+@import '_font-face'; 
+$font-family-regular: 'Muli', sans-serif;
+
+$regular:400;
+$bold:800;

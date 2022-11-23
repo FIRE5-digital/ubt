@@ -1,0 +1,527 @@
+/* --------------------------------------------------------------------------------------------*/
+/*  SCSS MIXINS
+/* --------------------------------------------------------------------------------------------*/
+
+
+/* Responsive Detection */
+@mixin breakpoint($media) {
+	@if $media == mobile {
+		@media only screen and (max-width: 480px) { @content; }
+	}
+	@if $media == min-mobile {
+		@media only screen and (min-width: 481px) { @content; }
+	}
+	@else if $media == min-tablet {
+		@media only screen and (min-width: 769px) { @content; }
+	}
+	@else if $media == min-small-desktop {
+		@media only screen and (min-width: 1025px) { @content; }
+	}
+	@else if $media == laptop {
+		@media only screen and (max-width: 1280px) { @content; }
+	}
+	@else if $media == min-laptop {
+		@media only screen and (min-width: 1281px) { @content; }
+	}
+	@else if $media == large-desktop {
+		@media only screen and (max-width: 1440px) { @content; }
+	}
+    @else if $media == min-large-desktop {
+        @media only screen and (min-width: 1441px) { @content; }
+    }
+    @else if $media == x-large-desktop {
+		@media only screen and (max-width: 1920px) { @content; }
+	}
+    @else if $media == min-x-large-desktop {
+        @media only screen and (min-width: 1921px) { @content; }
+    }
+    @else if $media == retina {
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2){ @content; } 
+    }
+    @else if $media == ipad {
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 1){ @content; } 
+    }
+    @else if $media == ie11 {
+        @media screen and (-ms-high-contrast: none) { @content; }
+    }
+    @else if $media == edge {
+        @supports (-ms-ime-align: auto) { @content; }
+    }
+	@else if $media == ios {
+    	@supports (-webkit-overflow-scrolling: touch) { @content }
+	}
+
+
+	@else if $media == small-mobile {
+		@media only screen and (max-width: 320px) { @content }
+	}
+	@else if $media == above-mobile {
+		@media only screen and (min-width: 641px) { @content }
+	}
+	@else if $media == above-small-desktop {
+		@media only screen and (min-width: 1024px) { @content }
+	}
+	@else if $media == tablet {
+		@media only screen and (max-width: 768px) { @content }
+	}
+	@else if $media == above-tablet {
+		@media only screen and (min-width: 769px) { @content }
+	}
+	@else if $media == small-desktop {
+		@media only screen and (max-width: 959px) { @content }
+	}
+	@else if $media == desktop {
+		@media only screen and (max-width: 1200px) { @content }
+	}
+	@else if $media == below-wide-desktop {
+		@media only screen and (max-width: 1199px) { @content }
+	}
+	@else if $media == below-desktop {
+		@media only screen and (max-width: 1023px) { @content }
+	}
+	@else if $media == below-tablet {
+		@media only screen and (max-width: 767px) { @content }
+	}
+	@else if $media == nav-break {
+		@media only screen and (max-width: 1200px) { @content }
+	}
+
+	@else if $media == above-nav-break {
+		@media only screen and (min-width: 941px) { @content }
+	}
+
+	@else if $media == wide-desktop {
+		@media only screen and (min-width: 1200px) { @content }
+	}
+	@else if $media == between-wide-desktop {
+		@media only screen and (max-width: 2000px) and (min-width: 1441px) { @content }
+	}
+	@else if $media == short {
+		@media only screen and (max-height: 767px) { @content }
+	}
+
+	@else if $media == short-and-wide {
+		@media only screen and (max-height: 767px) and (min-width: 1024px) { @content }
+	}
+
+	@else if $media == above-iphone5 {
+		@media only screen and (min-height: 569px) and (max-width: 1024px) { @content }
+	}
+
+
+
+
+}
+
+
+/* animation */
+
+@mixin animation($anim, $speed, $loop) {
+	-webkit-animation: $anim $speed $loop;
+	-moz-animation: $anim $speed $loop;
+	-o-animation: $anim $speed $loop;
+	animation: $anim $speed $loop;
+}
+
+// keyframes mixin
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+/*
+@author 14islands.com
+SASS mixins for future proof resolution media query
+*/
+@mixin if-min-resolution($dppx) {
+	@include if-resolution(min, $dppx) {
+		@content;
+	}
+}
+
+@mixin if-max-resolution($dppx) {
+	@include if-resolution(max, $dppx) {
+		@content;
+	}
+}
+
+@mixin if-resolution($prefix, $dppx) {
+	/* 1px = 96dpi */
+	$dpi: $dppx * 96;
+	@media
+	(-webkit-#{$prefix}-device-pixel-ratio: #{$dppx}),
+	( #{$prefix}--moz-device-pixel-ratio: #{$dppx}),
+	( -o-#{$prefix}-device-pixel-ratio: #{$dppx*2}/2),
+	( #{$prefix}-device-pixel-ratio: #{$dppx}),
+	( #{$prefix}-resolution: #{$dpi}dpi),
+	( #{$prefix}-resolution: #{$dppx}dppx) {
+		@content;
+	}
+}
+
+@mixin background($imgname, $imgext, $breakpoints... ) {
+	background-image: url(../img/#{$imgname}.#{$imgext});
+	@each $bp in $breakpoints {
+		@media only screen and (max-width: #{$bp}px) {
+	    	background-image: url(../img/#{$imgname}@#{$bp}.#{$imgext});
+	    }
+	}
+}
+
+/* Smooth transition */
+@mixin smooth {
+	-moz-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+@mixin no-transition {
+	-moz-transition: none!important;
+	-webkit-transition: none!important;
+	-o-transition: none!important;
+	transition: none!important;
+}
+
+
+// ctr
+@mixin ctr{
+	padding-left:$pad;
+    padding-right:$pad;
+    max-width:$max-width;
+    width:100%;
+    box-sizing:border-box;
+    margin:0 auto;
+    @include breakpoint(small-desktop){
+    	padding-left:$pad*1.5;
+    	padding-right:$pad*1.5;
+    }
+    @include breakpoint(mobile){
+    	padding-left:$pad*2;
+    	padding-right:$pad*2;
+    }
+}
+
+//standard section spacing
+@mixin section-spacing{
+	padding-top:$section-spacing;
+	padding-bottom:$section-spacing;
+	// @include breakpoint(laptop){
+	// 	padding-top:$large-spacing;
+	// 	padding-bottom:$large-spacing;
+	// }
+	@include breakpoint(tablet){
+		padding-top:$medium-large-spacing;
+		padding-bottom:$medium-large-spacing;
+	}
+	@include breakpoint(mobile){
+		padding-top:$medium-spacing;
+		padding-bottom:$medium-spacing;
+	}
+}
+
+@mixin section-spacing-top{
+	padding-top:$section-spacing;
+	@include breakpoint(laptop){
+		padding-top:$large-spacing;
+	}
+	@include breakpoint(tablet){
+		padding-top:$medium-large-spacing;
+	}
+	@include breakpoint(mobile){
+		padding-top:$medium-spacing;
+	}
+}
+
+@mixin section-spacing-bottom{
+	padding-bottom:$section-spacing;
+	@include breakpoint(laptop){
+		padding-bottom:$large-spacing;
+	}
+	@include breakpoint(tablet){
+		padding-bottom:$medium-large-spacing;
+	}
+	@include breakpoint(mobile){
+		padding-bottom:$medium-spacing;
+	}
+}
+
+@mixin short-section-spacing{
+	padding-top:$medium-large-spacing;
+	padding-bottom:$medium-large-spacing;
+
+	@include breakpoint(tablet){
+		padding-top:$medium-spacing;
+		padding-bottom:$medium-spacing;
+	}
+	@include breakpoint(mobile){
+		padding-top:$small-spacing;
+		padding-bottom:$small-spacing;
+	}
+}
+
+@mixin short-section-top{
+	padding-top:$medium-large-spacing;
+
+	@include breakpoint(tablet){
+		padding-top:$medium-spacing;
+	}
+	@include breakpoint(mobile){
+		padding-top:$small-spacing;
+	}
+}
+
+@mixin short-section-bottom{
+	padding-bottom:$medium-large-spacing;
+
+	@include breakpoint(tablet){
+		padding-bottom:$medium-spacing;
+	}
+	@include breakpoint(mobile){
+		padding-bottom:$small-spacing;
+	}
+}
+
+//section-colouring
+@mixin primary-section-colors{
+	background-color: $bg-color;
+	color: $text-color;
+}
+
+@mixin accent-section-colors{
+	background-color: $accent-color;
+	color: $bg-text-color;
+	a:not(.button){
+		color:$bg-text-color;
+		text-decoration:underline;
+		&:hover{
+			text-decoration:none;
+			color:mix($bg-text-color, $accent-color, 85%);
+		}
+	}
+}
+
+@mixin secondary-section-colors{
+	background-color: $secondary-color;
+	color: $bg-text-color;
+	a:not(.button){
+		color:$bg-text-color;
+		text-decoration:underline;
+		&:hover{
+			text-decoration:none;
+			color:mix($bg-text-color, $secondary-color, 85%);
+		}
+	}
+}
+
+@mixin tertiary-section-colors{
+	background-color: $tertiary-color;
+	color: $bg-text-color;
+	a:not(.button){
+		color:$bg-text-color;
+		text-decoration:underline;
+		&:hover{
+			text-decoration:none;
+			color:mix($bg-text-color, $tertiary-color, 85%);
+		}
+	}
+	table{
+		color:$bg-text-color;
+		tr,th,td{
+			border-color:$bg-text-color;
+		}
+	}
+}
+
+@mixin alt-section-colors{
+	background-color: $alt-color;
+}
+
+
+@mixin icon-right{
+	display: inline-flex;
+    align-items:center;
+    &:after{
+        content: '';
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position:center;
+    }
+}
+
+@mixin icon-left{
+	display: inline-flex;
+    align-items:center;
+    &:before{
+        content: '';
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position:center;
+    }
+}
+
+@mixin arrow-right{
+	@include icon-right();
+	&:after{
+		width:8px;
+        height:7px;
+        background-image:url('../img/icons/general/arrow-white.svg');
+        margin-left:10px;
+        transform:rotate(-90deg);
+	}
+}
+
+@mixin arrow-left{
+	@include icon-left();
+	&:before{
+		width:8px;
+        height:7px;
+        background-image:url('../img/icons/general/down-white.svg');
+        margin-right:10px;
+        transform:rotate(-90deg);
+	}
+}
+
+
+// light form
+@mixin light-form{
+	.form-group{
+		label{
+			color:$bg-text-color!important;
+		}
+		.form-control{
+			border-color:rgba($bg-text-color, 0.9);
+			color:$bg-text-color;
+			&:hover {
+				border-color: $bg-text-color;
+			}
+			&:focus {
+				border-color: $bg-text-color;
+				outline: none;
+			}
+			&::placeholder{
+				color:rgba($bg-text-color, 0.4);
+			}
+		}
+	}
+}
+
+@mixin active-animate{
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.25s;
+	&.active{
+		visibility:visible;
+		opacity: 1;
+	}
+}
+
+@mixin active-animate-down{
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.25s;
+	transform:scaleY(0);
+	transform-origin:top;
+
+	&.active{
+		visibility:visible;
+		opacity: 1;
+		transform: scaleY(1);
+	}
+}
+
+
+
+//extra info pop-up
+@mixin extra-info{
+	position: relative;
+    &:hover{
+    	&:after{
+    		opacity:1;
+    		bottom:120%;
+    		z-index:5;	
+    	}
+    }
+	&:after{
+    	color:$bg-text-color;
+	    content: attr(data-content);
+	    background: $secondary-color;
+	    position: absolute;
+	    bottom: 140%;
+	    font-size: 1.3rem;
+	    transition: all 0.4s;
+	    transform: translateX(-50%);
+	    left:50%;
+	    padding:8px;
+	    z-index: -5;
+	    opacity: 0;
+	    line-height: 1.3;
+	    text-align:center;
+	    border-radius: $border-radius;
+	    width:200px;
+	}
+}
+
+//extra info pop-up
+@mixin extra-info-inline{
+	position: relative;
+    &:hover{
+    	&:after{
+    		opacity:1;
+    		bottom:120%;
+    		z-index:5;	
+    	}
+    }
+	&:after{
+    	color:$bg-text-color;
+	    content: attr(data-content);
+	    background: $secondary-color;
+	    position: absolute;
+	    bottom: 140%;
+	    font-size: 1.3rem;
+	    transition: all 0.4s;
+	    transform: translateX(-50%);
+	    left:50%;
+	    padding:8px;
+	    z-index: -5;
+	    opacity: 0;
+	    line-height: 1.3;
+	    text-align:center;
+	    border-radius: $border-radius;
+	    white-space:nowrap;
+	}
+}
+
+//extra info pop-up
+@mixin extra-info-mobile{
+	@include breakpoint(small-desktop){
+		&:after{
+	    	color:$text-color;
+		    content: attr(data-content);
+		    background: none;
+		    position: inherit;
+		    bottom: auto;
+		    white-space: nowrap;
+		    left:auto;
+		    padding:0;
+		    opacity: 1;
+		    line-height: 1.3;
+		    top:0px;
+		    margin-left:$small-spacing/2;
+		    z-index:5;
+		}
+		&:hover{
+			color: $accent-color;
+		}
+	}
+}

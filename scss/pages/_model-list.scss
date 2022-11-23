@@ -1,0 +1,51 @@
+/* ==========================================================================
+Model List CSS
+========================================================================== */
+.model-list{
+	@include section-spacing;
+	padding-top:$medium-large-spacing;
+}
+
+.model-box{
+	width:(100/3)*1%;
+	@include breakpoint(laptop){
+		width:50%;
+	}
+	@include breakpoint(tablet){
+		width:100%;
+	}
+	> a{
+		flex-direction:row;
+		align-items:center;
+		h3{
+			font-size:$x-small-heading!important;
+			@include breakpoint(mobile){
+				font-size:$large-body-text!important;
+			}
+		}
+		p{
+			font-size:$small-body-text;
+		}
+
+		.model-box-content{
+			padding-left:$medium-spacing;
+		}
+		.model-box-img{
+			margin-bottom:0;
+			width:40%;
+			flex-shrink:0;
+			img{
+			}
+		}
+		.model-box-tags{
+			bottom:2px;
+			padding:9px 8px 5px 13px;
+			.green-arrow{
+				width:10px;
+				height:10px;
+				background:url('../img/icons/general/arrow-green.svg') center no-repeat;
+				transform:rotate(-90deg);
+			}
+		}
+	}
+}

@@ -1,0 +1,86 @@
+/* ==========================================================================
+Accordion CSS
+========================================================================== */
+
+.accordion{
+    .accordion-title{
+        border:1px solid $text-color;
+        border-radius:$border-radius;
+        padding:$small-spacing $medium-spacing;
+        font-weight:$bold;
+        font-size:$body-text;
+        display:flex;
+        justify-content:space-between;
+        width:100%;
+        &:hover{
+            cursor:pointer;
+            span{
+                border-color:$accent-color;
+                &:before, &:after{
+                    background-color:$accent-color;
+                }
+            }
+        }
+        span{
+            display: block;
+            border:2px solid $text-color;
+            width:20px;
+            height:20px;
+            border-radius:20px;
+            position:relative;
+            &:after{
+                content:'';
+                width:2px;
+                height:10px;
+                background-color:$text-color;
+                display:block;
+                position:absolute;
+                border-radius:5px;
+                top: 3px;
+                left: 7px;
+            }
+            &:before{
+                content:'';
+                width:10px;
+                height:2px;
+                background-color:$text-color;
+                display:block;
+                position:absolute;
+                border-radius:5px;
+                top: 7px;
+                left: 3px;
+            }
+        }
+    }
+    .accordion-panel{
+        display:none;
+        background-color:$bg-color;
+        padding:$medium-large-spacing;
+        @include breakpoint(tablet){
+            padding:$medium-spacing;
+        }
+        @include breakpoint(mobile){
+            padding:$small-spacing;
+        }
+    }
+    &.active{
+        .accordion-title{
+            background-color:$accent-color;
+            color:$bg-text-color;
+            border-color:$accent-color;
+            border-radius:$border-radius $border-radius 0 0;
+            span{
+                border-color:$bg-text-color;
+                &:before{
+                    background-color:$bg-text-color;
+                }
+                &:after{
+                    display:none;
+                }
+            }
+        }
+        .accordion-panel{
+            display:block;
+        }
+    }
+}

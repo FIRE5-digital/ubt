@@ -1,0 +1,94 @@
+/* ==========================================================================
+Dropdown CSS
+========================================================================== */
+
+.dropdown{
+    position: relative;
+    [class^="button"]{
+        display: flex;
+        align-items:center;
+        &:after{
+            content: '';
+            background-image:url('../img/icons/general/arrow-black.svg');
+            background-size:contain;
+            background-repeat: no-repeat;
+            background-position:center;
+            width:8px;
+            height:7px;
+        }
+    }
+    .dropdown-menu{
+        position: absolute;
+        // top: 100%;
+        // right: 0;
+        z-index: 1000;
+        display: none;
+        margin: 5px 0 0;
+        text-align: left;
+        background-color:$bg-color;
+        border-radius: $border-radius;
+        flex-direction:column;
+        a{
+            display:block;
+            font-weight:bold;
+            text-decoration: none;
+            padding:$small-spacing*0.5 $small-spacing;
+            &:hover{
+                color:$secondary-color;
+            }
+        }
+    }
+    &.active{
+        .dropdown-menu{
+            display: flex;
+        }
+    }
+}
+
+.dropdown-mobile{
+    position: relative;
+    .dropdown-menu{
+        @include breakpoint(small-desktop){
+            position:absolute;
+            top:100%;
+            left:0;
+            z-index:1000;
+            display:none;
+            min-width:230px;
+            margin:5px 0 0;
+            text-align:left;
+            background-color:$bg-color;
+            border-radius:$border-radius;
+            flex-direction:column;
+            li > a{
+                &:hover{
+                    background-color:$secondary-color;
+                    color:$bg-text-color;
+                }
+                &:after{
+                    display:none;
+                }
+            }
+        }
+        a{
+            @include breakpoint(small-desktop){
+                display: block;
+                font-weight: bold;
+                text-decoration: none;
+                padding: $small-spacing*0.5 $small-spacing!important;
+                color:$text-color;
+            }
+        }
+    }
+    &.active{
+        .dropdown-menu{
+            display: flex!important;
+        }
+    }
+
+    button{
+        @include breakpoint(min-small-desktop){
+            display:none!important;
+        }
+    }
+}

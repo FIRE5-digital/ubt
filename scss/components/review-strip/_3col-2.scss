@@ -1,0 +1,160 @@
+/* ==========================================================================
+3 Col Review 2 Reviews Per Screen Strip CSS
+========================================================================== */
+
+// dependencies = 
+
+.review-strip{
+	background-color:$bg-color;
+	@include section-spacing;
+
+	.ctr{
+		overflow:hidden;
+		@include breakpoint(min-large-desktop){
+			display:flex;
+			flex-wrap:wrap;
+			position: relative;
+		}
+	}
+
+	.review-summary{
+		@include breakpoint(min-large-desktop){
+			width:38%;
+			margin-bottom:0;
+			padding-right:$pad;
+			box-sizing:border-box;
+		}
+		h3{
+			@include breakpoint(min-large-desktop){
+				max-width:430px;
+				
+			}
+		}
+	}
+
+	.review-track{
+		overflow:hidden;
+		@include breakpoint(min-large-desktop){
+			width:62%;
+			box-sizing:border-box;
+		}
+	}
+	.reviews-ctr{
+		display: flex;
+		transition: transform 1s;
+		.review{
+			width:100%;
+			@include breakpoint(min-small-desktop){
+				width:50%;
+			}
+		}
+	}
+
+	.arrow-controls{
+		margin:($small-spacing/3)*-1;
+		@include breakpoint(min-laptop){
+			padding-top:$small-spacing;
+		}
+		@include breakpoint(min-large-desktop){
+			position:absolute;
+			bottom:0;
+			right:5vw;
+		}
+	}
+}
+
+.arrow-controls{
+	div{
+		text-indent: -9999999px;
+		display:inline-block;
+		width:17px;
+		height:28px;
+		background-image:url('../img/icons/general/line-arrow.svg');
+		background-size:contain;
+		background-repeat:no-repeat;
+		margin:$small-spacing/3;
+		box-sizing:border-box;
+		&.prev{
+			transform:rotate(180deg);
+		}
+		&.next{
+
+		}
+
+		&:hover{
+			opacity: 0.8;
+			cursor:pointer;
+		}
+	}
+}
+
+.review-summary{
+	margin-bottom:$small-spacing;
+	h3{
+		@include breakpoint(small-desktop){
+			font-size:3.2rem;
+		}
+	}
+	p{
+		font-size:2.2rem;
+		@include breakpoint(small-desktop){
+			font-size:1.8rem;
+		}
+	}
+	.review-stars{
+		width:5*30px;
+		height:30px;
+		margin:$small-spacing/2 0;
+		@include breakpoint(small-desktop){
+			margin:10px 0 0;
+		}
+		.stars-ctr{
+			background-size: 30px 30px;
+		}
+	}
+}
+
+.reviews-ctr{
+	margin:$small-spacing*-1;
+	@include breakpoint(small-desktop){
+		margin:($small-spacing/2)*-1;
+	}
+}
+
+.review{
+	padding:$small-spacing;
+	@include breakpoint(small-desktop){
+		padding:$small-spacing/2;
+	}
+	
+	.review-stars{
+		width:5*20px;
+		height:20px;
+		margin:0;
+		margin-left:5px;
+		.stars-ctr{
+			background-size: 20px 20px;
+			text-indent: -999999px;
+		}
+	}
+	h4{
+		display:flex;
+		align-items:center;
+		flex-wrap:wrap;
+	}
+	.review-date{
+		margin-top:$small-spacing/2;
+	}
+}
+
+.review-stars{
+	display:inline-block;
+	.stars-ctr{
+		background-image:url('../img/icons/general/review-star.svg');
+		background-repeat: repeat-x;
+		display:block;
+		height:100%;
+	}
+}
+
+// custom - anything site specific

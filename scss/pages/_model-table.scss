@@ -1,0 +1,165 @@
+
+
+.model-table{
+	display: table;
+	width:100%;
+	table-layout: fixed;
+	padding-bottom: 100px;
+
+	@include breakpoint(tablet){
+		display: block;
+
+	}
+
+	.model-table-head{
+	  display: table-row;
+	  background-color:$tertiary-color;
+	  padding: 20px 10px;
+
+	@include breakpoint(tablet){
+		display: flex;
+		padding: 0 10px;
+	}
+
+	@include breakpoint(mobile){
+		display: flex;
+		padding: 10px;
+	}
+
+
+	.table-cell{
+		@include breakpoint(mobile){
+			width: 50%;
+		}
+	}
+
+	}
+
+	.model-table-row{
+	  display: table-row;
+	  background-color:$alt-color;
+	  border-bottom:1px solid $bg-color;
+	  padding: 0 10px;
+
+	@include breakpoint(below-desktop){
+		font-size: 16px;
+	}
+
+
+	@include breakpoint(tablet){
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	@include breakpoint(mobile){
+		padding: 20px 10px;
+	}
+
+	.spec{
+		@include breakpoint(tablet){
+			display: flex;
+			width: 100%;
+			padding-bottom: 0;
+		}
+	}
+
+	.tags{
+		flex: 2;
+
+		@include breakpoint(mobile){
+			order: 2;
+			width: 100%;
+			flex: auto;
+		}	
+	}
+	  
+	  &:nth-of-type(2n){
+		  background-color:$bg-color;
+	  }
+	}
+	
+	.table-cell{
+	  display: table-cell;
+	  padding: 20px;
+	  text-align: center;
+	  vertical-align: middle;
+
+	  @include breakpoint(beow-desktop){
+		padding: 20px 10px;
+	}
+
+
+		@include breakpoint(mobile){
+			padding: 10px;
+		}
+
+
+	  &.search-form{
+		  .form-control{
+			font-size: 14px;
+			padding: 10px 28px 10px 10px;
+			font-weight: bold;
+			
+			text-overflow: ellipsis;
+
+			@include breakpoint(above-small-desktop){
+				width: auto;
+			}	
+
+		  }
+	  }
+
+	&.t-hidden{
+		@include breakpoint(tablet){
+			display: none;
+		}	
+	}
+
+	&.t-right{
+		@include breakpoint(tablet){
+			margin-left: auto;
+		}	
+	}
+
+
+
+	}
+	
+	.spec{
+	width: 33%;
+	text-align: left;
+	}
+
+	.tags{
+
+		text-align: left;
+	}
+
+	.cta{
+		min-width: 180px;
+	}
+	
+	h3{
+		span{
+			font-weight: normal;
+		}
+
+		@include breakpoint(below-desktop){
+			font-size: 20px;
+		}
+	}
+
+	.form-group{
+		margin-bottom: 0;
+	}
+
+	a{
+		&:hover{
+			color: #F87F00;
+		}
+	}
+
+
+
+
+}

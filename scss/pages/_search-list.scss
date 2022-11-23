@@ -1,0 +1,73 @@
+/* ==========================================================================
+Search CSS
+========================================================================== */
+
+.search-results {
+	@include section-spacing;
+	padding-top:$medium-large-spacing;
+	@include breakpoint(laptop){
+		padding-top:$medium-large-spacing;
+	}
+	@include breakpoint(mobile){
+		padding-top:$small-spacing;
+	}
+	.search-results-intro{
+		display:flex;
+		align-items:center;
+		justify-content:space-between;
+		margin-bottom:$large-spacing;
+		@include breakpoint(mobile){
+			margin-bottom:$medium-spacing;
+			flex-direction:column;
+			align-items:inherit;
+		}
+	}
+
+	.search-results-sort{
+		>div{
+			display:flex;
+			align-items:center;
+			margin-bottom:0;
+			label{
+				flex-shrink:0;
+				padding-right:$small-spacing;
+			}
+			.form-control{
+				min-width:180px;
+			}
+		}
+	}
+
+	.deal-list {
+		// display:flex;
+		padding-top: $medium-spacing;
+		// margin:$medium-spacing*-1;
+
+		display: grid;
+	    grid-template-columns: repeat(4, 1fr);
+	    grid-gap: 30px;
+
+	    @include breakpoint(laptop) {
+	        grid-template-columns: repeat(3, 1fr);
+	    }
+
+	    @include breakpoint(desktop) {
+	        grid-template-columns: repeat(3, 1fr);
+	    }
+
+	    @include breakpoint(tablet) {
+	        grid-template-columns: repeat(2, 1fr);
+	    }
+
+	    @include breakpoint(mobile) {
+	        grid-template-columns: repeat(1, 1fr);
+	    }
+		
+		.deal-box {
+			width: 100%;
+		}
+
+
+
+	}
+}

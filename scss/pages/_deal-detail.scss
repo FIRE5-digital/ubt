@@ -1,0 +1,744 @@
+/* ==========================================================================
+Deal Detail CSS
+========================================================================== */
+
+.deal-detail{
+	.deal-header{
+		width:100%;
+		padding:19px 0 30px;
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+		@include breakpoint(mobile){
+			flex-direction:column;
+			align-items:inherit;
+			padding:$small-spacing 0;
+		}
+		h1{
+			margin-bottom:0;
+			font-size:$large-heading;
+			@include breakpoint(mobile){
+				font-size:$medium-heading;
+			}
+		}
+		p{
+			font-size:$large-body-text;
+			margin:0;
+			line-height:1;
+			@include breakpoint(mobile){
+				font-size:$body-text;
+			}
+		}
+		.deal-header-info{
+			@include breakpoint(mobile){
+				margin-bottom:$small-spacing;
+			}
+		}
+	}
+
+	.deal-detail-ctr{
+		display: flex;
+		@include breakpoint(small-desktop){
+			flex-direction:column;
+		}
+	}
+
+	.deal-main{
+		width:60%;
+		padding:0 $pad 0 0;
+		box-sizing:border-box;
+		@include breakpoint(small-desktop){
+			padding:0;
+			width:100%;
+			margin-bottom:$medium-large-spacing;
+		}
+	}
+	.deal-aside{
+		width:40%;
+		display: flex;
+		flex-direction:column;
+		@include breakpoint(small-desktop){
+			margin:$medium-large-spacing 0;
+			width:100%;
+			z-index:10;
+		}
+		@include breakpoint(mobile){
+			margin:$medium-spacing 0;
+		}
+		.deal-aside-ctr{
+			@include tertiary-section-colors;
+			padding:$medium-large-spacing;
+			position:relative;
+			position:sticky;
+			top:0;
+			z-index:3;
+			border-radius:$border-radius;
+			@include breakpoint(ie11){
+				position:relative;
+			}
+			@include breakpoint(mobile){
+				padding:$small-spacing;
+			}
+		}
+		&.is-fixed{
+			@include breakpoint(small-desktop){
+				position:sticky;
+				bottom:0;
+			}
+			.form-group{
+				display:none;
+			}
+		}
+	}
+
+
+	.deal-header-controls{
+		display:flex;
+		@include breakpoint(min-tablet){
+			flex-shrink:0;
+		}
+	}
+
+	.deal-gallery{
+		position:relative;
+		.deal-gallery-img{
+			position:relative;
+			margin-bottom:$medium-large-spacing;
+		}
+		.deal-gallery-ctr{
+			overflow:hidden;
+		}
+
+		.deal-box-tags{
+			@include breakpoint(min-mobile){
+				bottom: 0;
+				right: 0;
+				padding: 10px;
+				background: hsla(0,0%,100%,.8);
+				border-radius: $border-radius 0 0 0;
+			}
+			> span{
+				width:auto;
+				background-position: 6px center, left;
+    			background-size: 14px 14px, 27px 30px;
+    			display:flex;
+    			align-items:center;
+    			> span{
+    				text-indent:0;
+    				flex-shrink:0;
+    				padding-left:34px;
+    				font-size:$small-body-text;
+    				font-weight:$bold;
+    				&:after{
+    					display:none!important;
+    				}
+    			}
+			}
+		}
+
+		.gallery-track-ctr{
+			margin:$small-spacing*-1;
+		}
+		
+		ul{
+			list-style-type: none !important;
+			margin:0;
+			padding:0;
+			display:flex;
+			transition:transform 1s;
+			@include breakpoint(tablet){
+				display:none;
+			}
+			li{
+				min-width: 150px;
+				list-style-type: none !important;
+				width:20%;
+				a{
+					padding:$small-spacing;
+					display:block;
+					img{
+						border-radius:$border-radius;
+					}
+				}
+			}
+		}
+
+		img{
+			width:100%;
+			height:auto;
+			border-radius:$border-radius;
+		}
+
+		.deal-gallery-controls{
+			display:none;
+			@include breakpoint(small-desktop){
+				display:flex;
+				justify-content:space-between;
+				position: absolute;
+				width:100%;
+				height:100%;
+
+				a{
+					padding:5vw;
+					display: flex;
+					align-items:center;
+					&:hover{
+						background-color:rgba($tertiary-color, 0.1);
+					}
+					&:last-of-type{
+						transform:rotate(180deg);
+					}
+					img{
+						width:15px;
+					}
+				}
+			}
+		}
+	}
+
+	.deal-info{
+		margin:$medium-large-spacing 0;
+		@include alt-section-colors;
+		padding:$medium-large-spacing;
+		@include breakpoint(mobile){
+			margin:$medium-spacing 0;
+			padding:$small-spacing;
+		}
+	}
+
+	.deal-review{
+		margin-top: $medium-spacing;
+	}
+
+	.deal-spec{
+		// margin-bottom:$large-spacing;
+		@include breakpoint(mobile){
+			margin-bottom:$small-spacing;
+		}
+		h3{
+			margin-bottom:$medium-large-spacing;
+			@include breakpoint(mobile){
+				margin-bottom:$small-spacing;
+			}
+		}
+
+		ul{
+			list-style-type:none !important;
+			margin:$small-spacing*-1 $x-small-spacing*-1;
+			margin-left: 0 !important;
+			padding:0;
+			display:flex;
+			flex-wrap:wrap;
+			@include breakpoint(mobile){
+				margin:$x-small-spacing*-1;
+			}
+			li{
+				list-style-type:none !important;
+				padding:$small-spacing $x-small-spacing;
+				box-sizing:border-box;
+				text-align:center;
+				min-width:33.333333%;
+				margin-bottom: 0 !important;
+				margin-right: 30px !important;
+				@include breakpoint(large-desktop){
+					min-width:auto;
+				}
+				@include breakpoint(mobile){
+					min-width:100%;
+					padding:$x-small-spacing 0;
+					margin-right: 0;
+				}
+				> span{
+					display:flex;
+					align-items:center;
+				}
+				img{
+					margin-right:$small-spacing;
+				}
+			}
+		}
+	}
+
+	.deal-form{
+		margin-bottom:80px;
+		.form-group{
+			>label{
+				min-width: 160px;
+			}
+			label{
+				width:40%;
+				flex-shrink:0;
+				display: flex;
+				>span{
+					margin-left:$small-spacing;
+				}
+				@include breakpoint(mobile){
+					width:100%;
+					flex-shrink:inherit;
+					margin-bottom:$small-spacing;
+				}
+			}
+		}
+		button{
+			position:absolute;
+			left:0;
+			bottom:0;
+			width:100%;
+			font-size:$medium-heading;
+			padding:$medium-spacing;
+			border-radius:0 0 $border-radius $border-radius;
+			
+			@include breakpoint(mobile){
+				padding:$small-spacing;
+				font-size:$small-heading;
+
+				position: fixed;
+				left: auto;
+				right: 0;
+				width: 33%;
+				font-size: 1.6rem;
+				height: 90px;
+				border-radius: 0;
+			}
+		}
+
+		.deal-notice {
+			p {
+				line-height: 1;	
+
+				small {
+					font-size: 13px;		
+				}
+			}
+			
+			
+		}
+	}
+
+	.quote-form-ctr{
+		legend{
+			font-weight:bold;
+			margin-bottom:$section-spacing/2;
+		}
+		.maintenance-cost{
+			align-self:center;
+			padding:$small-spacing/2;
+		}
+
+		.form-group{
+			display: flex;
+			align-items:center;
+			&:last-of-type{
+				margin-bottom:0;
+			}
+
+			@include breakpoint(mobile){
+				flex-wrap:wrap;
+				margin-bottom:$small-spacing;
+			}
+			legend{
+				width:30%;
+				margin-bottom:0;
+				@include breakpoint(large-desktop){
+					width:100%;
+					margin-bottom:$small-spacing/3*2;
+				}
+				@include breakpoint(small-desktop){
+					width:30%;
+					margin-bottom:0;
+				}
+
+				@include breakpoint(tablet){
+					width:100%;
+					margin-bottom:$small-spacing/3*2;
+				}
+				span{
+					font-weight:normal;
+					font-size:1.4rem;
+					display: inline-block;
+				}
+			}
+			.radio-group{
+				width:70%;
+				margin:0;
+				padding-left:$small-spacing;
+				box-sizing:border-box;
+				@include breakpoint(large-desktop){
+					width:100%;
+					padding-left:0;
+				}
+				@include breakpoint(small-desktop){
+					width:70%;
+					padding-left:$small-spacing;
+				}
+				@include breakpoint(tablet){
+					width:100%;
+					padding-left:0;
+				}
+				label{
+					padding:0;
+					flex:1;
+					@include breakpoint(small-desktop){
+						flex-grow:0;
+					}
+					@include breakpoint(mobile){
+						flex-grow:1;
+					}
+					div{
+						padding:20px;
+						font-size:$body-text;
+					}
+				}
+			}
+			.more-information{
+				@include extra-info;
+				color:$secondary-color;
+			}
+		}
+	}
+
+	.deal-summary{
+		margin-bottom:$medium-large-spacing;
+		min-height: 90px;
+		
+		@include breakpoint(mobile){
+			width: 67%;
+			padding-left: 10px;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			background: #333;
+			margin-bottom: 0;	
+			z-index: 1;
+		}
+
+		.price-label{
+			font-size:$body-text;
+			margin-bottom:$x-small-spacing;
+			color:$accent-color;
+			@include breakpoint(mobile){
+				margin-bottom:0;
+				line-height: 1;
+				padding-top: 3px;
+			}
+
+
+		}
+		.monthly-rental{
+			font-size:5rem;
+			margin-bottom:0;
+			@include breakpoint(mobile){
+				font-size:$large-heading;
+				line-height: 1;
+			}
+			@include breakpoint(small-mobile){
+				font-size:3.9rem;
+			}
+			> span{
+				font-size:$body-text;
+			}
+		}
+		.initial-rental{
+			line-height:1;
+			@include breakpoint(mobile){
+				margin-bottom:0;
+				font-size: 1rem;
+			}
+		}
+
+		.extra-information {
+			@include breakpoint(mobile){
+				font-size: 1rem;
+			}
+		}
+	}
+
+	.deal-tabs{
+		width:100%;
+		@include alt-section-colors;
+
+		.tab-content{
+			display: none;
+			&.active{
+				display:block;
+				@include breakpoint(small-desktop){
+					background-color:$alt-color;
+					color:$text-color;
+					border:1px solid $bg-color;
+				}
+			}
+		}
+	}
+
+	.tab-content{
+		padding:$medium-large-spacing;
+		@include breakpoint(tablet){
+            padding:$medium-spacing;
+        }
+        @include breakpoint(mobile){
+            padding:$small-spacing;
+        }
+
+		ul{
+			margin:0 0 $x-large-spacing/2 !important;
+			padding:0;
+			list-style-type:none;
+
+			@include breakpoint(mobile){
+				margin: 0 !important;
+			}
+
+			&:last-of-type{
+				margin-bottom:0;
+			}
+
+
+			li{
+				border-bottom:1px solid $line-color;
+				
+				@include breakpoint(mobile){
+					font-size: 16px;
+					line-height: 1.2;
+				}
+
+				&:last-of-type{
+					border:none;
+				}
+
+				.checkbox-label{
+					&:hover{
+						cursor:inherit;
+						background-color:lighten($alt-color, 2%);
+					}
+
+					@include breakpoint(mobile) {
+						padding-top: 0;
+					}
+
+					> div {
+						@include breakpoint(mobile) {
+							padding-right: 0 !important;
+						}
+					}
+				}
+			}
+		}
+		h3 {
+
+			&:first-child {
+				margin: 0 0 18px 0;
+			}
+		}
+
+		.accordion{
+			margin-bottom:$medium-spacing;
+		}	
+	}
+
+	.tab-list{
+		display: flex;
+		background:$tertiary-color;
+		color:$bg-text-color;
+		@include breakpoint(small-desktop){
+			flex-direction:column;
+		}
+
+		.tab{
+			padding:0 $medium-large-spacing;
+			text-align:center;
+			@include breakpoint(small-desktop){
+				border-bottom:1px solid $bg-color;
+				background-color:$alt-color;
+				color:$text-color;
+				padding:0 $pad;
+			}
+
+			h4{
+				margin:$small-spacing 0;
+				font-size: $body-text;
+
+				@include breakpoint(small-desktop){
+					margin:15px 0;
+					display: flex;
+					align-items:center;
+					justify-content:space-between;
+					&:after{
+						content:'';
+						width:20px;
+						height:20px;
+						background:
+						linear-gradient($text-color,$text-color),
+						linear-gradient($text-color,$text-color);
+						background-position:center;
+						background-size: 50% 2px,2px 50%; /*thickness = 2px, length = 50% (25px)*/
+						background-repeat:no-repeat;
+						display: inline-block;
+						border:2px solid $text-color;
+						border-radius:20px;
+					}
+				}
+			}
+			&.active{
+				background-color:$alt-color;
+				color:$text-color;
+				@include breakpoint(small-desktop){
+					background-color:$tertiary-color;
+					color:$bg-text-color;
+				}
+				&:hover{
+					cursor: inherit;
+					background-color:$alt-color;
+					color:$text-color;
+					@include breakpoint(small-desktop){
+						background-color:$tertiary-color;
+						color:$bg-text-color;
+					}
+				}
+				h4:after{
+					border-color:$bg-text-color;
+					background:
+					linear-gradient($bg-text-color,$bg-text-color);
+					background-position:center;
+					background-size: 50% 2px; /*thickness = 2px, length = 50% (25px)*/
+					background-repeat:no-repeat;
+				}
+			}
+			&:hover{
+				cursor: pointer;
+				background-color:lighten($tertiary-color, 10%);
+				@include breakpoint(small-desktop){
+					background-color:darken($alt-color, 10%);
+				}
+			}
+		}
+	}
+
+	.deal-overview{
+		@include section-spacing-top;
+		@include breakpoint(small-desktop){
+			padding-top:0;
+		}
+		.tab-content{
+			border-top:5px solid $secondary-color;
+		}
+		
+	}
+
+	.quote-form-ctr{
+		.options-link{
+			@include section-spacing-top;
+			.text-link{
+				color:$accent-color;
+				@include arrow-right;
+				@include icon-left;
+				
+				&:after{
+					background-image:url('../img/icons/general/down-green.svg');
+				}
+				&:before{
+					width:19px;
+			        height:19px;
+			        background-image:url('../img/icons/general/cog-green.svg');
+			        margin-right:5px;
+				}
+			}
+		}
+	}
+
+	.derivative-latest{
+		.ctr{
+			padding-left:0;
+			padding-right:0;
+		}
+	}
+
+	.latest-offers-strip-ctr {
+		padding-top: $spacing;
+		
+		@include breakpoint(mobile){
+			padding-top: 0;
+		}
+
+		> div {
+			padding: 0;
+		}
+
+		h2 {
+
+		}
+	}
+}
+
+.share-menu{
+	display:flex;
+	align-items:center;
+	margin-right:-5px;
+	@include breakpoint(mobile){
+		margin:0;
+	}
+	>span{
+		font-weight:$bold;
+		margin:5px;
+		@include breakpoint(mobile){
+			display:none;
+
+		}
+
+	}
+	> a{
+		margin:5px;
+		&:first-of-type{
+			@include breakpoint(mobile){
+				margin-left:0;
+			}
+		}
+	}
+}
+
+.email-icon{
+	background-image:url('../img/icons/sm/email-circle.svg');
+	width:35px;
+	height:35px;
+	display:block;
+	background-size:contain;
+	text-indent:-9999999px;
+	background-repeat:no-repeat;
+	@include breakpoint(mobile){
+		width:28px;
+		height:28px;
+	}
+}
+
+.twitter-icon{
+	background-image:url('../img/icons/sm/twitter-circle.svg');
+	width:35px;
+	height:35px;
+	display:block;
+	background-size:contain;
+	text-indent:-9999999px;
+	background-repeat:no-repeat;
+	@include breakpoint(mobile){
+		width:28px;
+		height:28px;
+	}
+}
+
+.fb-icon{
+	background-image:url('../img/icons/sm/facebook-circle.svg');
+	width:35px;
+	height:35px;
+	display:block;
+	background-size:contain;
+	text-indent:-9999999px;
+	background-repeat:no-repeat;
+	@include breakpoint(mobile){
+		width:28px;
+		height:28px;
+	}
+}
+
+.derivative-page{
+	.latest-offers-strip .latest-offer-intro{
+		&:before{display:none;}
+	}
+}

@@ -1,0 +1,119 @@
+/* ==========================================================================
+Header CSS
+========================================================================== */
+
+// dependencies = 
+
+//site-header
+.site-header{
+	min-height:1px; //ie11 fix
+	background-color:$bg-color;
+	> .ctr{
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+	}
+
+	.logo{
+		padding:$small-spacing $medium-spacing $small-spacing 0;
+		display:block;
+		@include breakpoint(small-desktop){
+			padding:$small-spacing $medium-spacing $small-spacing $pad;
+		}
+		img{
+			max-width:100%;
+			height:auto;
+			@include breakpoint(large-desktop){
+				max-width:90%;
+			}
+		}
+	}
+
+	.price-switch{
+		padding:$small-spacing $medium-spacing;
+		form{
+			display:flex;
+		}
+		@include breakpoint(large-desktop){
+			font-size:1.4rem;
+			padding:$small-spacing;
+		}
+		@include breakpoint(small-desktop){
+			display:none;
+			padding:$small-spacing $medium-spacing;
+		}
+	}
+
+	.call{
+		padding:$small-spacing 0 $small-spacing $medium-spacing;
+		white-space:nowrap;
+		@include breakpoint(large-desktop){
+			font-size:1.7rem;
+			padding:$small-spacing;
+		}
+		@include breakpoint(small-desktop){
+			display:none;
+			padding:$small-spacing $medium-spacing;
+		}
+	}
+
+	.mobile-menu-toggle{
+		cursor:pointer;
+		align-items:center;
+		display: none;
+		padding:$small-spacing $medium-spacing;
+		background-color:$accent-color;
+		color:$bg-text-color;
+		@include breakpoint(small-desktop){
+			display: flex;
+
+		}
+	}
+}
+
+//full-header
+.full-header{
+	display:flex;
+	flex-direction:column;
+	.site-header{
+		@include tertiary-section-colors;
+		.site-bar-ctr{
+			background-color:transparent;
+		}
+	}
+}
+
+
+
+//top-nav
+.top-nav{
+	@include alt-section-colors;
+	font-size:$x-small-body-text;
+	padding:$x-small-spacing 0;
+
+	ul{
+		margin:0;
+		padding:0;
+		list-style-type:none;
+	}
+
+	> .ctr{
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+	}
+
+	.review-info{
+		display:flex;
+		align-items:center;
+		> span{
+			flex-shrink:0;
+			padding:0 $x-small-spacing;
+		}
+		@include breakpoint(mobile){
+			img:last-of-type, span{
+				display:none;
+			}
+		}
+	}
+}

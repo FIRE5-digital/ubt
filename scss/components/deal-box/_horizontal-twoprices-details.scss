@@ -1,0 +1,242 @@
+/* ==========================================================================
+Horizontal Two Prices More Details Deal Box CSS
+========================================================================== */
+
+// dependencies = mixin: extra-info
+
+
+.deal-offers-strip-ctr {
+	flex-wrap:wrap;
+}
+
+//deal-boxes
+.deal-box-wide {
+	display:flex;
+	width: 50%;
+	padding:$pad/3;
+	box-sizing:border-box;
+	position: relative;
+	@include breakpoint(laptop){
+		flex-direction:column;	
+	}
+	@include breakpoint(small-desktop){
+		width:100%;
+		flex-direction:row;
+		padding:$small-spacing $pad/2;
+	}
+	@media only screen and (max-width: 767px) {
+		flex-direction:column;
+	}
+
+
+	//image
+	.deal-box-img{
+		position: relative;
+		flex-grow:1;
+		flex-shrink:1;
+		width:47%;
+		@include breakpoint(laptop){
+			width:100%;	
+			flex-grow:0;
+		}
+
+
+		img{
+			width: 100%;
+			height:100%;
+			object-fit:cover;
+		}
+	}
+
+
+	.deal-box-stock{
+		background-color: $success-color;
+		font-size: $small-body-text;
+		color:$bg-text-color;
+		padding:$small-spacing/2 $small-spacing;
+		position: absolute;
+		bottom:0;
+		left:0;
+	}
+	.deal-box-offer{
+		background-color: $tertiary-color;
+		font-size: $small-body-text;
+		color:$bg-text-color;
+		padding:$small-spacing/2 $small-spacing $small-spacing/2 36px;
+		position: absolute;
+		top:0;
+		right:0;
+		background-image:url('../img/icons/ideal-outline.svg');
+		background-position: $small-spacing/2 center;
+		background-repeat: no-repeat;
+		border-radius: 0 0 0 20px;
+	}
+
+	//information
+	.deal-box-info{
+		flex-grow:1;
+		flex-shrink:1;
+		width:53%;
+		display:flex;
+		flex-direction:column;
+		@include breakpoint(laptop){
+			width:100%;	
+		}
+	}
+
+
+	.deal-box-content {
+		padding:$small-spacing*2;
+		flex-grow:1;
+		@include primary-section-colors;
+	}
+
+	.deal-box-content-ctr {
+		display: flex;
+		justify-content:space-between;
+		
+		@include breakpoint(small-desktop){
+			flex-direction:column;
+		}
+		
+		h3{
+			margin:0 0 5px 0;
+			display: block;
+
+		}
+
+
+	}
+
+	.deal-box-controls{
+		padding:$small-spacing/2;
+		flex-shrink:0;
+		@include breakpoint(small-desktop){
+			padding-left:0;
+			padding-right:0;
+			margin:-$small-spacing/4;
+		}
+		a{
+			display: inline-block;
+			@include extra-info;
+			@include extra-info-mobile;
+			text-decoration: none;
+			@include breakpoint(small-desktop){
+				margin:$small-spacing/4;
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+			
+			&:after{
+				left:auto;
+				right:0;
+				transform:inherit;
+				@include breakpoint(small-desktop){
+					color: $accent-color;
+				}
+			}
+			img{
+				background-color: $accent-color;
+			}
+		}
+	}
+
+	.deal-box-spec {
+		margin-top:$small-spacing*1.5;
+		
+		ul{
+			margin:0;
+			padding:0;
+			list-style-type:none;
+			display: flex;
+			flex-wrap:wrap;
+			margin:-$small-spacing/2;
+
+			li{
+				min-width:33.333333%;
+
+				span{
+					display: flex;
+					align-items:center;
+					padding:$small-spacing/2;
+					box-sizing:border-box;
+				}
+			}
+
+			img{
+				max-width:20px;
+				max-height:20px;
+			}
+		}
+
+		h4{
+			margin-bottom: 0;
+			white-space: nowrap;
+			margin-top:0;
+			margin-left: $small-spacing*0.5;
+			font-size: $small-body-text;
+
+			@include breakpoint(mobile){
+				font-size: $small-body-text;
+			}
+		}
+	}
+
+	.deal-box-prices{
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+		
+		.deal-box-price{
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+			.deal-box-price-ctr{
+				padding:$small-spacing;
+			}
+
+			span{
+				margin-bottom:0;
+				font-weight: 700;
+				display: block;
+				font-size: 4rem;
+			}
+
+			p{
+				font-size: $small-body-text;
+			}
+		}
+
+		.deal-box-personal{
+			background-color:$secondary-color;
+			color:$bg-text-color;
+		}
+		.deal-box-business{
+			background-color:$tertiary-color;
+			color:$bg-text-color;
+		}
+
+	}
+
+	.deal-box-button{
+		.button{
+			padding:$small-spacing;
+			width:100%;
+			height:100%;
+			box-sizing:border-box;
+			font-size: $body-text;
+			display: flex;
+			align-items:center;
+			border-radius: 0 0 30px 0;
+			span{
+				width:100%;
+			}
+		}
+	}
+
+}
+
+// custom - anything site specific

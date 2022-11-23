@@ -1,0 +1,229 @@
+/* ==========================================================================
+Form CSS
+========================================================================== */
+
+form{
+	margin-bottom:0;
+}
+
+legend{
+}
+
+.form-group{
+	margin-bottom:$small-spacing;
+
+	label{
+		font-size:$body-text;
+		color:$text-color;
+		font-weight: bold;
+		margin-bottom:$x-small-spacing;
+		display:block;
+	}
+}
+
+.form-control{
+	width: 100%;
+	box-sizing:border-box;
+	font-size:$body-text;
+	font-weight:$regular;
+	color:$text-color;
+	background-color: white;
+	border:1px solid $line-color;
+	padding:$small-spacing*0.5 $medium-spacing*0.5;
+	border-radius:$border-radius;
+	&:hover {
+		border-color: $line-color;
+	}
+	&:focus {
+		border-color: $secondary-color;
+		outline: none;
+	}
+	&::placeholder{
+		// color:rgba($text-color, 0.4);
+		color: $text-color;
+	}
+}
+
+.form-row{
+	@include breakpoint(min-tablet){
+		display: flex;
+		margin:$small-spacing*-1 $small-spacing*-0.5;
+	}
+
+	> div{
+		box-sizing:border-box;
+		flex:1;
+		@include breakpoint(min-tablet){
+			padding:$small-spacing $small-spacing*0.5;
+		}
+	}
+}
+
+textarea.form-control{
+	border:1px solid $line-color;
+	padding:$small-spacing*0.5 $medium-spacing*0.5;
+	border-radius:$border-radius;
+	min-height: 200px;
+}
+
+
+//styling select boxes https://www.filamentgroup.com/lab/select-css.html
+.select-css {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-image: url('../img/icons/general/arrow-black.svg'), linear-gradient(to bottom, $bg-color 0%, $bg-color 100%);
+	background-repeat: no-repeat, repeat;
+	background-position: right $small-spacing center, 0 0;
+	background-size: 9px 7px, 100%;
+
+	&::-ms-expand {
+		display: none;
+	}
+	&:active{
+
+	}
+	option {
+		font-weight:normal;
+	}
+}
+
+
+// Custom Radio Buttons
+
+.radio-group{
+	display: flex;
+	flex-wrap:wrap;
+	margin:($small-spacing/6)*-1;
+	p{
+		width:100%;
+	}
+	label{
+		color:$text-color;
+		position:relative;
+		padding:$small-spacing/6;
+		display: flex;
+		box-sizing:border-box;
+		&:hover{
+			cursor: pointer;
+		}
+
+		div{
+	    	background-color: $alt-color;
+	    	text-align:center;
+	    	padding:$small-spacing/2 $small-spacing;
+	    	box-sizing:border-box;
+	    	border-radius:$border-radius;
+	    	display: flex;
+			flex-direction:column;
+			justify-content:center;
+			width:100%;
+			
+	    	span{font-size: $small-body-text;}
+
+	    	@include breakpoint(min-laptop){
+	    		padding:$small-spacing*0.5 $small-spacing;
+	    	}
+	    }
+
+	}
+	input{
+		position: absolute;
+		width:100%;
+		height:100%;
+	    opacity: 0;
+	    cursor: pointer;
+	    left:0;
+
+	    &:checked ~ div{
+	    	background:$tertiary-color;
+	    	color:$bg-text-color;
+	    }
+	}
+}
+
+// checkbox for derivative options
+.checkbox-label{
+	display:flex;
+	justify-content: space-between;
+	padding:20px 0;
+	cursor: pointer;
+
+	> div{
+		&:first-of-type{
+			padding-right:$small-spacing;
+		}
+	}
+	.option-price{
+		font-weight:bold;
+	}
+
+	input{
+		position: absolute;
+	    opacity: 0;
+	    cursor: pointer;
+	}
+
+	input ~ .checkmark{
+		border:2px solid $tertiary-color;
+		border-radius:30px;
+		width:14px;
+		height:14px;
+		line-height: 14px;
+		display: inline-block;
+		position:relative;
+		top:2px;
+	}
+
+	input:checked ~ .checkmark{
+		&:after{
+			content: '';
+			background-color: $secondary-color;
+			width:10px;
+			height: 10px;
+			border-radius:20px;
+			position:absolute;
+			top:2px;
+			left:2px;
+
+		}
+	}
+}
+
+.input-container {
+
+	grid-gap: 0.5em 1em;
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(auto-fit,minmax(90px,1fr));
+
+	&.radio-switch {
+		> label {
+			cursor: pointer;
+			display: flex;
+			width: auto !important;
+			justify-content: center;
+			border-radius: $border-radius;
+			background: $dark-grey;
+			//text-transform: capitalize;
+			border: 1px solid #ffffff;
+			color: white !important;
+			padding: 12px 10px;
+			text-align: center;
+			align-items: center;
+			margin: 0 !important;
+			user-select: none;
+			@include smooth;
+		}
+		> input {
+			display: none;
+			&:checked {
+				+ .toggles {
+					cursor: default;
+					background: $dark-green;
+					border: 1px solid $dark-green;
+				}
+			}
+		}
+	}
+}

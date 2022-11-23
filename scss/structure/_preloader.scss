@@ -1,0 +1,11 @@
+/* ==========================================================================
+Preloader CSS
+========================================================================== */
+
+.no-js .site-loading {display: none!important;}
+
+.site-loading_show{
+    animation: fadein 0.3s;
+    animation-fill-mode: forwards;
+    display: flex!important;
+}

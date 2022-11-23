@@ -1,0 +1,61 @@
+
+
+.mission-statements{
+    background: $light-grey;
+    padding: 14px 3.75%;
+    font-size: .875em;
+
+    // @include breakpoint(below-tablet) {
+    //     display: none;
+    // }
+
+
+
+
+    > *{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    ul {
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        li {
+            padding: 0 20px;
+            margin: 0;
+            list-style: none !important;
+            
+            &:first-child {
+                padding-left: 0;
+            }
+            
+            &:nth-child(2){
+                @include breakpoint(mobile) {
+                    display: none;
+                }
+            }
+
+            &:nth-child(3){
+                @include breakpoint(tablet) {
+                    display: none;
+                }
+            }
+
+            &:nth-child(4){
+                @include breakpoint(desktop) {
+                    display: none;
+                }
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            @include breakpoint(mobile) {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+}

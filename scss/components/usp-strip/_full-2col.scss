@@ -1,0 +1,73 @@
+/* ==========================================================================
+Full 2 Col USP Strip CSS
+========================================================================== */
+
+// dependencies = 
+
+//process-strip
+.usp-strip{
+	display:flex;
+	@include breakpoint(small-desktop){
+		flex-wrap:wrap;
+	}
+	> div{
+		width:50%;
+		@include breakpoint(small-desktop){
+			width:100%;
+		}
+	}
+	// padding:$pad 0;
+
+	// @include breakpoint(tablet){
+	// 	padding:$x-large-spacing/2 0;
+	// }
+	.usp-strip-content{
+		@include section-spacing;
+		@include secondary-section-colors;
+		@include breakpoint(small-desktop){
+			width:100%;
+		}
+
+		h1{
+			@include breakpoint(laptop){
+				font-size:4vw;
+			}
+			@include breakpoint(small-desktop){
+				font-size:$large-heading/1.5;
+			}
+		}
+	}
+}
+
+.usp-list{
+	.usp-list-item{
+		padding-left: 160px;
+		background-image:url('../img/icons/ideal-tick-white.svg');
+		background-repeat: no-repeat;
+		background-size: 130px;
+		margin:$pad/2 0;
+		min-height: 90px;
+		&:last-of-type{
+			margin-bottom:0;
+		}
+		@include breakpoint(large-desktop){
+			padding-left:20%;
+			background-size:14%;
+		}
+		@include breakpoint(tablet){
+			margin:$x-large-spacing/2 0;
+		}
+	}
+}
+.usp-strip-img{
+	background-image:url('../img/home/audi.jpg');
+	background-size: cover;
+	background-position: right bottom;
+	@include breakpoint(small-desktop){
+		min-height:500px;
+	}
+}
+
+
+
+// custom - anything site specific

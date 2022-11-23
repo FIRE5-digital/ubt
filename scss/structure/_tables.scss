@@ -1,0 +1,64 @@
+ /* ==========================================================================
+   Tables CSS
+   ========================================================================== */
+
+table{
+    width:100%;
+    margin:$small-spacing 0;
+    border-collapse: collapse;
+    tr{
+    	&:first-of-type{
+        	td{
+        		border-top:0;
+        	}
+        }
+        td, th{
+            padding:$small-spacing;
+            border-top:1px solid $line-color;
+            vertical-align:top;
+        }
+    }
+    thead{
+    	th{
+            padding:20px;
+            background-color:$tertiary-color;
+            color:$bg-text-color;
+            text-align:left;
+        }
+    }
+}
+
+.striped-table{
+	tr:nth-of-type(2n){
+		background:$alt-color;
+	}
+}
+
+.data-table{
+	tr{
+		display:flex;
+		justify-content:space-between;
+		width: 100%;
+		border-top:1px solid $line-color;
+		&:first-of-type{
+			border-top:0;
+		}
+		td{
+			border:0;
+			&:first-of-type{
+				padding-left:0;
+			}
+			&:last-of-type{
+            	text-align:right;
+            	padding-right:0;
+            }
+		}
+		th{
+			border:0;
+			text-align:left;
+			&:first-of-type{
+				padding-left:0;
+			}
+		}
+	}
+}

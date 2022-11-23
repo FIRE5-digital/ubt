@@ -1,0 +1,217 @@
+
+
+body{
+    @extend %sans;
+
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.25em;
+    overflow-x: hidden;
+    color: $black;
+}
+
+a{
+    @include smooth;
+    color: $black;
+
+    .reversed &{
+        color: white;
+    }
+
+
+    &:hover{
+        //color: $red;
+
+        .reversed &{
+            .icon{
+                //fill: $red;
+            }
+        }
+    }
+
+
+    &.more{
+        margin-left: auto;
+        
+        font-weight: bold;
+        text-decoration: none;
+
+        .icon{
+            fill: $red;
+        }
+
+        span{
+            color: $red;
+            text-decoration: underline;
+        }        
+    }
+
+}
+
+h1{
+    //color: $med-grey;
+    font-size: 2.5em;
+    line-height: 1.1em;
+    margin-bottom: 1em;
+
+    @include breakpoint(mobile) {
+        font-size: 1.75em;
+    }
+
+    span{
+        color: $black;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        line-height: 1;
+
+        .reversed &{
+            color: white;
+        }
+
+        &:after{
+            content: '';
+            background: $red;
+            width: 100%;
+            height: .119047619em;
+            position: absolute;
+            bottom: .047619048em;
+            left: 0;
+            z-index: -1;
+        }
+    }
+}
+
+h2{
+    font-size: 1.75em;
+}
+
+h3{
+    font-size: 1.25em;
+}
+
+.centered{
+    text-align: center;
+}
+
+.m-left-aligned{
+    @include breakpoint(mobile) {
+        text-align: left;
+    }
+}
+
+.full-width-container{
+
+    max-width: 1776px;
+    padding: 60px 3.75%;
+
+    @include breakpoint(mobile) {
+        padding: 40px 6.25%;
+    }
+
+}
+
+.bg-light-grey{
+    background: $light-grey;
+}
+
+.zebra-stripe{
+    > *{
+        background: $light-grey;
+
+        &:nth-child(2n+2){
+            background: white;
+        }
+
+        &:last-child{
+            margin-bottom: 60px;
+
+            @include breakpoint(mobile) {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+.reversed{
+    color: white;
+
+    .icon{
+        fill: white;
+    }
+    
+}
+
+.last-margin{
+    > *:last-child{
+        margin-bottom: 100px;
+
+        @include breakpoint(mobile) {
+            margin-bottom: 60px;
+        }
+    }
+}
+
+
+.panel-header{
+    display: flex;
+    margin-bottom: 60px;
+    align-items: flex-end;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 40px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    h1{
+        margin-bottom: 0;
+
+        @include breakpoint(mobile) {
+            margin-bottom: .357142857em;
+        }
+    }
+
+    a{
+        margin-left: auto;
+
+        @include breakpoint(mobile) {
+           margin-left: 0;
+        }
+    }
+}
+
+.two-col{
+    display: flex;
+    flex-wrap: wrap;
+
+    > *{
+        width: 48.3108108%;
+        margin-top: 60px;
+
+        @include breakpoint(mobile) {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        &:nth-child(2n + 2){
+            margin-left: 3.3783784%;
+
+            @include breakpoint(mobile) {
+                margin-left: 0;
+            }
+        }
+
+        &:nth-child(-n+2){
+            margin-top: 0;
+        }
+    }
+}
+
+
+
+.fire5{
+    color: $fire5;
+}
+

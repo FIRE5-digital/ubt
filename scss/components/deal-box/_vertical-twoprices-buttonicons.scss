@@ -1,0 +1,178 @@
+/* ==========================================================================
+Vertical Two Prices Button Icons Deal Box CSS
+========================================================================== */
+
+// dependencies = mixin: extra-info
+
+//deal-boxes
+@include breakpoint(small-desktop){
+	.deal-offers-strip-ctr{
+		flex-wrap:wrap;
+	}
+}
+
+.deal-box-vertical {
+	display:flex;
+	flex-direction:column;
+	width:25%;
+	padding:$pad/3;
+	box-sizing:border-box;
+
+	//hide when gets too big (should change to some form of slider)
+	@include breakpoint(laptop){
+		width:33.33333%;
+	}
+	@include breakpoint(small-desktop){
+		width:50%;
+	}
+	@include breakpoint(tablet){
+		width:50%;
+	}
+	@include breakpoint(mobile){
+		width:100%;
+	}
+
+
+
+	.deal-box-img{
+		position: relative;
+		min-height:1px; //ie11 fix
+		img{
+			max-width:100%;
+			height:auto;
+		}
+		> a img{width:100%;}
+	}
+
+	.deal-box-details{
+		display: flex;
+		justify-content:space-between;
+		position: absolute;
+		width: 100%;
+	}
+
+	.deal-box-offer{
+		background-color:$tertiary-color;
+		color:$bg-text-color;
+		display: block;
+		line-height: 30px;
+		height:30px;
+		padding: 0 $small-spacing 0 36px;
+		border-radius: 0 0 0 20px;
+		font-weight: 700;
+		font-size: $small-body-text;
+		background-image: url('../img/icons/ideal-outline.svg');
+		background-repeat: no-repeat;
+		background-position: $small-spacing/2 center;
+	}
+
+	.deal-box-controls{
+		padding:$small-spacing/2;
+		a{
+			display: inline-block;
+			@include extra-info;
+			&:after{
+				left:auto;
+				right:0;
+				transform:inherit;
+			}
+			img{
+				background-color: $accent-color;
+			}
+		}
+	}
+
+	.deal-box-content{
+		background:$bg-color;
+		padding:$x-large-spacing/2;
+		flex-grow:1;
+		@include breakpoint(large-desktop){
+			padding:$small-spacing*2 $small-spacing*1.5;
+		}
+		@include breakpoint(laptop){
+			padding:$small-spacing*1.5 $small-spacing;
+		}
+		h3{
+			margin:0 0 $small-spacing/2;
+			font-weight: 300;
+			
+			position: relative;
+			@include breakpoint(small-desktop){
+				font-size: $large-body-text;
+				padding-right: 80px;
+			}
+			&.in-stock{
+				padding-right: 30px;
+				@include breakpoint(small-desktop){
+					padding-right: 80px;
+				}
+			}
+		}
+		p{
+			line-height:1;
+		}
+	}
+
+	.deal-box-prices{
+		display: flex;
+		flex-wrap:wrap;
+		text-align: center;
+		.deal-box-price{
+			flex:1;
+			.deal-box-price-ctr{
+				padding:$small-spacing;
+			}
+
+			span{
+				margin-bottom:0;
+				font-weight: 700;
+				display: block;
+				font-size: 3rem;
+			}
+
+			p {
+				font-size: $small-body-text;
+			}
+		}
+
+		.deal-box-personal{
+			background-color:$secondary-color;
+			color:$bg-text-color;
+		}
+		.deal-box-business{
+			background-color:$tertiary-color;
+			color:$bg-text-color;
+		}
+
+	}
+
+	.deal-box-button{
+		a{
+			display: block;
+			border-radius:0 0 15px 15px;
+			padding-top:$small-spacing;
+			padding-bottom:$small-spacing;
+			padding-left:$small-spacing;
+			padding-right:$small-spacing;
+			font-size: $body-text;
+		}
+	}
+
+	.deal-box-stock{
+	    display: inline-block;
+	    text-align: center;
+	    @include extra-info;
+	    @include extra-info-mobile;
+		position: absolute;
+	    right:0;
+	    top:0;
+	    &:after{
+	    	@include breakpoint(small-desktop){
+	    		position: initial;
+	    	}	
+	    }
+	}
+
+}
+
+// custom - anything site specific

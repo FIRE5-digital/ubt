@@ -1,0 +1,64 @@
+/* ==========================================================================
+Standard CTA CSS
+========================================================================== */
+
+// dependencies = 
+
+.cta-strip{
+	@include short-section-spacing;
+	@include accent-section-colors;
+	> .ctr{
+		display:flex;
+		align-items:center;
+		justify-content:space-between;
+		@include breakpoint(small-desktop){
+			flex-direction:column;
+		}
+	}
+	h1{
+		@include breakpoint(small-desktop){
+			margin-bottom:$medium-large-spacing;
+		}
+		@include breakpoint(tablet){
+			margin-bottom:$small-spacing;
+		}
+	}
+
+	.cta-links{
+		display:flex;
+		font-size:$large-body-text;
+		font-weight:$bold;
+		margin:$small-spacing*-1;
+		flex-wrap:wrap;
+		@include breakpoint(tablet){
+			margin:0;
+		}
+		> a{
+			text-decoration:none;
+			padding:$small-spacing;
+			@include breakpoint(tablet){
+				padding:$small-spacing/2;
+			}
+			&:hover{
+				cursor:pointer;
+			}
+		}
+	}
+
+	.call{
+		&:before{
+			width:20px;
+        	height:20px;
+			background-image:url('../img/icons/general/phone-white.svg');
+		}
+	}
+	.email{
+		&:before{
+			width:24px;
+        	height:19px;
+			background-image:url('../img/icons/general/mail-white.svg');
+		}
+	}
+}
+
+// custom - anything site specific

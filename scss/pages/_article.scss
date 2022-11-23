@@ -1,0 +1,89 @@
+/* ==========================================================================
+Blog List CSS
+========================================================================== */
+
+.article-ctr{
+	display:flex;
+	@include breakpoint(tablet){
+		flex-wrap:wrap;
+	}
+	.article-content{
+		@include section-spacing;
+		padding-top:$medium-large-spacing;
+		@include breakpoint(laptop){
+			padding-top:$medium-large-spacing;
+		}
+	}
+	.article-heading{
+		@include secondary-section-colors;
+		@include short-section-spacing;
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-position:center;
+		position:relative;
+		> .ctr{
+			z-index:1;
+			position:relative;
+		}
+		&:after{
+			content:'';
+			position:absolute;
+			width:100%;
+			height:100%;
+			background:rgba(#222, 0.9);
+			top:0;
+			left:0;
+		}
+		h1{
+			margin-top:$large-spacing;
+			margin-bottom:$x-small-spacing;
+			@include breakpoint(mobile){
+				margin-top:0;
+			}
+		}
+	}
+	.article-sidebar{
+		@include tertiary-section-colors;
+		@include ctr;
+		@include section-spacing;
+		padding-top:$medium-large-spacing;
+		width:25%;
+		flex-shrink:0;
+		@include breakpoint(laptop){
+			width:30%;
+		}
+		@include breakpoint(small-desktop){
+			width:35%;
+		}
+		@include breakpoint(tablet){
+			width: 100%;
+		}
+		ul{
+			list-style-type:none;
+			padding:0;
+			margin:0;
+			li{
+				border-bottom:1px solid $bg-text-color;
+				&:last-of-type{
+					border-bottom:0;
+				}
+			}
+		}
+		a{
+			display:block;
+			padding:$small-spacing 0;
+			text-decoration:none!important;
+			display:flex;
+			width:100%;
+			@include icon-right;
+			justify-content:space-between;
+			&:after{
+				width:8px;
+		        height:7px;
+		        background-image:url('../img/icons/general/arrow-white.svg');
+		        margin-left:10px;
+		        transform:rotate(-90deg);
+			}
+		}
+	}
+}

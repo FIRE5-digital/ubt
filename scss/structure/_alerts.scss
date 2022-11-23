@@ -1,0 +1,34 @@
+ /* ==========================================================================
+   Button CSS
+   ========================================================================== */
+
+[class^="alert"]{
+    display: flex;
+    flex-direction:column;
+    background-color:$secondary-color;
+    color:$bg-text-color;
+    padding:$small-spacing/2;
+    border-radius: $border-radius;
+
+    @include breakpoint(min-laptop){
+         padding:$small-spacing $small-spacing*2;
+    }
+
+    &[class*="error"]{
+        background-color:$error-color;
+    }
+    &[class*="warning"]{
+        background-color:$warning-color;
+    }
+    &[class*="caution"]{
+        background-color:$caution-color;
+    }
+    &[class*="success"]{
+        background-color:$success-color;
+    }
+    &[class*="tertiary"]{
+        @include tertiary-section-colors;
+    }
+
+}
+

@@ -1,0 +1,368 @@
+/* ==========================================================================
+   UTILITIES
+   ========================================================================== */
+
+
+
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Custo∂mize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video,
+svg {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+img{
+    max-width: 100%;
+}
+
+a, a:active, a:focus {
+outline: none;
+}
+
+/*
+ * No top margin on all elements
+ */
+
+*{
+    margin-top: 0;
+}
+
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* layout & grid overrides */
+
+ul{
+    padding-left: 18px;
+
+    li{
+        margin-bottom: 1em;
+    }
+}
+
+dd{
+  margin: 0;
+}
+
+.layout{
+    @extend %clearfix;
+
+    position: relative;
+    margin-left: 0;
+    padding-left: 0;
+
+
+    &:not(section){
+        margin-bottom: 0;
+    }
+
+    > *{
+      list-style-type: none;
+      margin-bottom: 0;
+    }
+}
+
+
+ul:not(.layout):not(.slick-dots){
+
+  overflow: hidden;
+  margin-left: 1em;
+
+  li{
+    list-style-type: disc;
+  }
+}
+
+
+main{
+
+
+    ul ul {
+        list-style-type: disc;
+    }
+}
+
+
+
+.top-layer{
+    position: relative;
+    z-index: 8000;
+}
+
+.floated{
+    float: left;
+}
+
+.floated-right{
+    float: right!important;
+}
+
+.m-no-float{
+    @include breakpoint(mobile) {
+        float: none!important;
+    }
+
+}
+
+.bd-no-float{
+    @include breakpoint(below-desktop) {
+        float: none!important;
+    }
+
+}
+
+.t-no-float{
+    @include breakpoint(tablet) {
+        float: none!important;
+    }
+
+}
+
+.floated-list{
+    @extend %clearfix;
+
+    > *{
+        float: left;
+        list-style-type: none;
+    }
+}
+
+
+.flex-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.inline-list{
+    > *{
+        display: inline-block;
+
+        &:not(:last-child){
+          //margin-right: 16px;
+        }
+    }
+
+    &.m-block-100{
+        > li,
+        > dt,
+        > dd{
+            @include breakpoint(mobile) {
+                display: block;
+                margin-right: 0!important;
+                margin-bottom: .5em;
+            }
+        }
+    }
+
+    &.centered{
+        text-align: center;
+    }
+}
+
+.comma-seperated-list{
+  li{
+    &:after{
+      content: ', ';
+
+    }
+
+    &:last-child{
+      &:after{
+        content: '';
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+
+.pipe-separated-list{
+  li{
+    margin-right: .2em;
+    &:after{
+      content: ' | ';
+      padding-left: .2em;
+    }
+
+    &:last-child{
+      margin-right: 0;
+      &:after{
+        content: '';
+      }
+    }
+  }
+}
+
+.table-list{
+    padding-left: 0;
+    margin-left: 0;
+    display: table;
+    table-layout: fixed;
+
+    text-align: center;
+
+
+
+
+    > *{
+        display: table-cell;
+
+        @include breakpoint(mobile) {
+
+            margin: 0 0 1.25em 0;
+        }
+
+    }
+}
+
+
+nav{
+    ul{
+        margin-left: 0;
+        padding-left: 0;
+
+        li{
+            list-style-type: none;
+
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.vertical-center-parent {
+   display: table;
+   table-layout: fixed;
+   width: 100%;
+}
+.vertical-center {
+   display: table-cell;
+   vertical-align: middle;
+   width: 100%;
+}
+
+.flex-center-parent {
+  display: flex!important;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+}
+
+.flex-center {
+  margin: 0;
+}
+
+.align-bottom {
+   position: absolute;
+   bottom: 0;
+   right: 0;
+
+   @include breakpoint(mobile) {
+       position: relative;
+       margin-top: 1em;
+   }
+
+
+   li:last-child{
+        padding-right: 0;
+
+        &:after{
+            padding-left: 0;
+        }
+   }
+
+}
+
+.centered{
+    text-align: center;
+}
+
+.m-centered-copy{
+    @include breakpoint(mobile) {
+        text-align: center;
+    }
+}
+
+
+.t-centered-copy{
+    @include breakpoint(tablet) {
+        text-align: center;
+    }
+}
+
+.parentBgImg{
+    img{
+        display: none;
+
+        @include breakpoint(mobile) {
+            display: block;
+        }
+    }
+}
+

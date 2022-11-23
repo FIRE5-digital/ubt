@@ -1,0 +1,24 @@
+
+.default {
+    @include section-spacing;
+    padding-top:$medium-large-spacing;
+    @include breakpoint(laptop){
+        padding-top:$medium-large-spacing;
+    }
+    @include breakpoint(mobile){
+        padding-top:$small-spacing;
+    }
+
+    a {
+        //color: $blue;
+        
+        &:hover {
+            color: $black;
+            text-decoration: underline;
+        }
+    }
+
+    ul {
+        padding-top: 20px;
+    }
+}

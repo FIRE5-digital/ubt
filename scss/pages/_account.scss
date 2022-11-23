@@ -1,0 +1,235 @@
+
+.account-login {
+	padding: $spacing 0;
+
+	.login {
+		width : 50%;
+
+		@include breakpoint(mobile) {
+			width: 100%;
+		}
+	}
+}
+
+
+.main-full {
+	padding: $spacing 0;
+
+	.login {
+		width : 50%;
+
+		@include breakpoint(mobile) {
+			width: 100%;
+		}
+	}
+}
+
+
+.account-page {
+	
+	.sal-sac-summary {
+
+		@include breakpoint(mobile){
+			padding: 5px;
+		}
+
+		.deal-box-vertical {
+			width: 100%;
+			@include breakpoint(min-x-large-desktop){
+				width: 100%;
+			}
+			@include breakpoint(desktop){
+				width: 100%;
+			}
+			@include breakpoint(tablet){
+				width: 100%;
+				padding:$small-spacing*0.25;
+			}
+			@include breakpoint(mobile){
+				width: 100%;
+			}
+		}		
+	}
+
+	.offers-details {
+
+		.row {
+			@include breakpoint(mobile) {
+				display: block;		
+			}
+
+			.col {
+				@include breakpoint(mobile) {
+					width: 100%;
+				}
+			}
+
+		}
+	}
+
+	.deal-box-vertical {
+		display:flex;
+		flex-direction:column;
+		width:(100%/3);
+		padding:$small-spacing*0.5;
+		box-sizing:border-box;
+
+		//hide when gets too big (should change to some form of slider)
+		@include breakpoint(min-x-large-desktop){
+			width:(100%/4);
+		}
+		@include breakpoint(desktop){
+			width:50%;
+		}
+		@include breakpoint(tablet){
+			width:50%;
+			padding:$small-spacing*0.25;
+		}
+		@include breakpoint(mobile){
+			width:100%;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.deal-box-img{
+			position: relative;
+			min-height:1px; //ie11 fix
+			img{
+				max-width:100%;
+				height:auto;
+			}
+			> a img{width:100%;}
+		}
+
+		.deal-box-content{
+			background-color:$alt-color;
+			flex-grow:1;
+			display:flex;
+			flex-direction:column;
+
+
+
+			h3{
+				margin:0;
+				margin-bottom: 5px;
+				font-size: $x-small-heading;
+				line-height:110%;
+			}
+			.deal-box-content-ctr{
+				text-align:center;
+				padding:$small-spacing*0.5;
+			}
+
+			.deal-box-extra{
+				display: flex;
+				flex-wrap:wrap;
+				margin-top:auto;
+				// align-items:center;
+				@include breakpoint(tablet){
+					flex-direction:column;
+					flex-wrap:nowrap;
+				}
+				> div{
+					flex:1 1 50%;
+					border:1px solid $bg-color;
+					margin:-1px;
+					padding:$small-spacing*0.5;
+					box-sizing:border-box;
+					@include breakpoint(tablet){
+						// width: 100%;
+						padding: $small-spacing*0.25;
+					}
+				}
+			}
+
+			.deal-box-price{
+				text-align: center;
+				div{
+					display: flex;
+					align-items:baseline;
+					justify-content:center;
+					// font-size: $medium-heading;
+					font-size:2.9rem;
+					color:$secondary-color;
+					font-weight: bold;
+					padding-top:10px;
+					span{
+						font-size: 1.3rem;
+					}
+				}
+				span{
+					font-size:1.1rem;
+				}
+			}
+
+			.deal-box-terms{
+				@include breakpoint(tablet){
+					display: none;
+					text-align:center;
+				}
+				ul{
+					list-style-type: none;
+					margin:0;
+					padding:0;
+					li{
+						margin-bottom: 2px;
+						font-size:1.2rem;
+						display: flex;
+						align-items:center;
+						@include breakpoint(tablet){
+							display: inline-flex;
+							margin-right:5px;
+						}
+
+						&:before{
+							content:'';
+							margin-right:4px;
+							width:7px;
+							height:6px;
+							background-image:url('../img/icons/general/down-black.svg');
+							background-repeat: no-repeat;
+							background-position: center;
+							background-size:contain;
+							transform: rotate(-90deg);
+						}
+					}
+				}
+			}
+		}
+
+
+		
+
+	}
+
+	//lists
+	.deal-list{
+		margin:$small-spacing*-0.5;
+		@include breakpoint(desktop){
+			flex-wrap:wrap;
+		}
+		@include breakpoint(tablet){
+			margin:$small-spacing*-0.25;
+		}
+	}
+
+
+	.contract-options { 
+		.options-list {
+			margin-bottom: 30px;;
+			ul {
+				padding-left: 0;
+				margin-left: 0;
+
+				li {
+					border-bottom: 1px solid #ccc;
+					margin-bottom: 0;
+					font-size: 1.5rem;
+				}
+			}
+		}
+
+	}
+}

@@ -1,0 +1,130 @@
+/* ==========================================================================
+ Blog Strip CSS
+ ========================================================================== */
+
+.blog-list-strip{
+    @include alt-section-colors;
+    
+
+    .blog-list-strip-intro{
+        @include section-spacing;
+        display:flex;
+        align-items:center;
+        &:before{
+            content:'';
+            margin-right:$medium-spacing;
+            width:65px;
+            height:72px;
+            background-image: url('../img/icons/general/book-white.svg'), url('../img/icons/general/green-hex.svg');
+            background-size: 50%, 100%;
+            background-repeat:no-repeat;
+            background-position:center;
+            @include breakpoint(mobile){
+                width:42px;
+            }
+        }
+        h1{
+            @include breakpoint(mobile){
+                margin-bottom:0;
+            }
+        }
+        p{
+            @include breakpoint(mobile){
+                display:none;
+            }
+        }
+    }
+}
+
+// blog page
+.blog-list{
+    @include primary-section-colors;
+    display:flex;
+    flex-wrap:wrap;
+    > div{
+        &:nth-of-type(4n) > a, &:nth-of-type(4n-1) > a{
+            flex-direction:row-reverse;
+            @include breakpoint(small-desktop){
+                flex-direction: row;
+            }
+        }
+        &:nth-of-type(2n+1) > a{
+            @include breakpoint(small-desktop){
+                flex-direction:row-reverse;
+            }
+        }
+    }
+}
+
+.blog-item{
+    width:50%;
+    position:relative;
+    @include breakpoint(small-desktop){
+        width:100%;
+    }
+
+    > a{
+        text-decoration:none!important;
+        display:flex;
+        @include breakpoint(mobile){
+            flex-direction:column!important;
+        }
+        >div{
+            width:50%;
+            overflow:hidden;
+            @include breakpoint(mobile){
+                width:100%;
+            }
+        }
+        &:hover{
+            img{
+                transform:scale(1.1);
+            }
+            .blog-item-content{
+                background-color:$alt-color;
+            }
+            .blog-item-icon{
+                background-image: url(../img/icons/general/book-white.svg), url(../img/icons/general/green-hex.svg), url(../img/icons/general/grey-hex.svg);
+            }
+        }
+    }
+
+    img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        min-height:380px;
+        transition: transform 1s;
+        @include breakpoint(mobile){
+            min-height:240px;
+        }
+    }
+
+    .blog-item-content{
+        display:flex;
+        align-items:center;
+        .blog-item-content-ctr{
+            padding:$large-spacing;
+            @include breakpoint(mobile){
+                padding:$medium-spacing $pad*2;
+            }
+        }
+    }
+
+    .blog-item-icon{
+        width:67px;
+        height:75px;
+        position:absolute;
+        left:50%;
+        top:50%;
+        margin-left:(67px)*-0.5;
+        margin-top:(75px)*-0.5;
+        background:url('../img/icons/general/book-white.svg'), url('../img/icons/general/green-hex.svg'), url('../img/icons/general/white-hex.svg');
+        background-repeat:no-repeat;
+        background-position:center;
+        background-size:24px 19px, 68% 68%, contain;
+        @include breakpoint(tablet){
+            display:none;
+        }
+    }
+}

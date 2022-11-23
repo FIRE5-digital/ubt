@@ -1,0 +1,56 @@
+/* ==========================================================================
+Make List CSS
+========================================================================== */
+.make-list{
+	@include section-spacing;
+	padding-top:$medium-large-spacing;
+}
+
+.deal-box.make-box{
+	.deal-box-content{
+		.deal-box-content-ctr{
+			h3{
+				margin-bottom:$x-small-spacing;
+			}
+			p{
+				font-size:$small-body-text;
+			}
+		}
+	}
+	.deal-box-tags{
+		bottom:-8px;
+	}
+}
+
+.make-list-intro{
+	display:flex;
+	justify-content: space-between;
+	@include section-spacing-bottom;
+	padding-bottom: 30px !important;
+	@include breakpoint(tablet){
+		align-items:center;
+	}
+
+	.make-logo{
+		img{
+			max-width:100%;
+			height:auto;
+			max-height:90px;
+			width:auto;
+		}
+		@include breakpoint(mobile){
+			max-width:80px;
+			flex-shrink:0;
+		}
+	}
+	h1{
+		@include breakpoint(mobile){
+			margin-bottom:0;
+		}
+	}
+	p{
+		@include breakpoint(tablet){
+			display:none;
+		}
+	}
+}

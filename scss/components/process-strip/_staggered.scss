@@ -1,0 +1,79 @@
+/* ==========================================================================
+Staggered Process CSS
+========================================================================== */
+
+// dependencies =
+
+//process-strip
+.process-strip{
+	@include section-spacing;
+	@include primary-section-colors;
+	text-align:center;
+
+	.process-strip-ctr{
+		display: flex;
+		margin-left:-$x-large-spacing/2;
+		margin-right:-$x-large-spacing/2;
+		@include breakpoint(large-desktop){
+			margin-left:-$pad/2;
+			margin-right:-$pad/2;
+		}
+
+		@include breakpoint(small-desktop){
+			flex-wrap:wrap;
+			justify-content:center;
+			margin-left:-$small-spacing*1.5;
+			margin-right:-$small-spacing*1.5;
+		}
+	}
+
+	.process-step{
+		@include breakpoint(min-small-desktop){
+			&:nth-of-type(2n){
+				margin-top:$x-large-spacing;
+			}
+		}
+	}
+}
+
+//process-step
+.process-step{
+	padding:$x-large-spacing/2;
+	box-sizing:border-box;
+	@include breakpoint(large-desktop){
+		padding:$pad/2;
+	}
+	@include breakpoint(small-desktop){
+		width:33.333333%;
+		padding:$small-spacing*1.5;
+	}
+	@include breakpoint(mobile){
+		width:100%;
+		padding:$small-spacing*1,5 0;
+	}
+	
+	.process-step-img{
+		position: relative;
+		margin-bottom:$pad/2;
+		img{
+			max-width: 100%;
+			height:auto;
+		}
+	}
+
+	.step-num{
+		display: inline-block;
+		background-color: $tertiary-color;
+		color: $bg-text-color;
+		font-weight: 700;
+		padding:18px;
+		font-size:2rem;
+		position: absolute;
+	}
+
+	h2{
+		font-weight:bold;
+	}
+}
+
+// custom - anything site specific

@@ -1,0 +1,157 @@
+ /* ==========================================================================
+   Nav CSS
+   ========================================================================== */
+
+$nav-bg: $tertiary-color;
+
+
+// .site-header{
+// 	.ctr{
+// 		@include breakpoint(small-desktop){
+// 			padding:0;
+// 		}
+// 	}
+// 	.site-menu-ctr{
+		
+// 	}
+// 	//site-menu
+// 	.site-menu{
+// 		@include breakpoint(small-desktop){
+// 			display:none;
+// 			position:absolute;
+// 			background-color:$nav-bg;
+// 			width:100%;
+// 			top:100%;
+// 		}
+// 		//all-elemnts
+// 		ul{
+// 			list-style-type:none;
+// 			margin:0;
+// 			padding:0;
+// 			a{
+// 				text-decoration:none!important;
+// 				padding: $small-spacing $small-spacing;
+// 				display:block;
+// 				white-space:nowrap;
+// 				@include breakpoint(large-desktop){
+// 					font-size:1.7rem;
+// 					padding:$small-spacing;
+// 				}
+// 				@include breakpoint(small-desktop){
+// 					font-size:$body-text;
+// 					padding:$small-spacing $medium-spacing;
+// 					color:$bg-text-color;
+// 				}
+// 			}
+// 		}
+// 		.site-menu-ctr{
+// 			display: flex;
+// 			align-items:center;
+// 			@include breakpoint(small-desktop){
+// 				flex-direction:column;
+// 			}
+// 			//top level menu
+// 			>ul{
+// 				width:100%;
+// 				@include breakpoint(min-small-desktop){
+// 					display: flex;
+// 				}
+// 				>li{
+// 					>a{
+// 						display:flex;
+// 					}
+// 				}
+// 			}
+// 			.menu-dropdown{
+// 				position:relative;
+// 				> a{
+// 					@include arrow-right;
+// 					&:after{
+// 						transform:rotate(0);
+// 					}
+// 				}
+// 				//turn off dropdown ctrs
+// 				.menu-dropdown-full, .menu-dropdown-inline{
+// 					display:none;
+// 				}
+// 				//turn on when li is active
+// 				&.active{
+// 					.menu-dropdown-full, .menu-dropdown-inline{
+// 						display:block;
+// 						position:absolute;
+// 						z-index:5;
+// 						background-color:$secondary-color;
+// 						top:100%;
+// 						li a{
+// 							color:$bg-text-color;
+// 						}
+// 					}
+// 				}
+
+// 				//full width dropdown only
+// 				.menu-dropdown-full{
+// 					width:100%;
+// 					left:0;
+// 					.ctr{
+// 						display:flex;
+// 						>ul{
+// 							flex-grow:1;
+// 							>li{
+// 								font-weight:$bold;
+// 								li{
+// 									font-weight:$regular;
+// 								}
+// 							}
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	//logo and menu button on tablet and lower
+// 	.site-bar-ctr{
+// 		background-color:$bg-color;
+// 		@include breakpoint(small-desktop){
+// 			display:flex;
+// 			justify-content:space-between;
+// 			align-items:stretch;
+// 			width: 100%;
+// 		}
+// 		.site-bar-controls{
+// 			display:flex;
+// 			.call, .price-switch{
+// 				display:none;
+// 				@include breakpoint(small-desktop){
+// 					display:flex;
+// 				}
+// 				@include breakpoint(mobile){
+// 					display:none;
+// 				}
+// 			}
+// 		}
+		
+// 	}
+
+// 	&.active{
+// 		// when menu button is clicked
+// 		> .ctr{
+// 			background-color:$nav-bg;
+// 		    height: 100vh;
+// 		    display: flex;
+// 		    flex-direction: column;
+// 		    width: 100%;
+// 		    z-index: 99;
+// 		    position: fixed;
+// 		    overflow-y: scroll;
+// 		}
+
+// 		.site-menu{
+// 			flex-grow: 1;
+// 		    position: initial;
+// 		    display: flex;
+// 		    flex-direction: column;
+// 		}
+// 	}
+// }
+	

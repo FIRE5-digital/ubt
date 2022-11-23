@@ -1,0 +1,74 @@
+/* ==========================================================================
+Range List CSS
+========================================================================== */
+
+.range {
+	
+	padding-top: $small-spacing;
+	.range-intro {
+		padding: 20px 0;
+		display: flex;
+
+		.manufacturer-logo {
+		 	width: 200px;
+			padding-left: 40px;
+		}
+	
+		&:empty{
+			padding:0;
+		}
+
+	}
+
+	.range-list{
+	    @include section-spacing;
+		padding-top:$medium-large-spacing;
+	 
+		display: flex;
+		flex-wrap: wrap;
+		margin: -23px;
+
+		.model-box {
+			width: 33.33%;
+			padding: 23px;
+			box-sizing: border-box;
+			
+			> a .model-box-img{
+				margin-bottom: 0;
+				width: 40%;
+				flex-shrink: 0;
+			}
+
+			> a .model-box-tags {
+				bottom: 2px;
+				padding: 9px 8px 5px 13px;
+			}
+
+			.model-box-img img {
+				transition: transform 1s;
+				width: 100%;
+				height: auto;
+			}
+
+			.model-box .model-box-content {
+				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+			}
+
+		}
+	}
+	
+	
+	.model-table {
+		.model-table-head,
+		.model-table-row {
+			display: grid;
+		    grid-template-columns: 1fr 1fr 150px 150px 150px 150px;
+		}
+		
+			
+	}
+		
+	
+}

@@ -1,0 +1,93 @@
+ /* ==========================================================================
+   Typography CSS
+   ========================================================================== */
+
+h1, .h1{
+    font-size:$large-heading;
+    font-weight:$bold;
+    line-height:1.2;
+    margin:0;
+    @include breakpoint(mobile){
+        font-size:7.5vw;
+        margin-bottom:$small-spacing;
+    }
+}
+.section-h1,
+.default h1,
+.search-results h1{
+    margin-bottom:$small-spacing;
+}
+
+h2, .h2{
+    font-size:$medium-heading;
+    font-weight:$bold;
+    margin:0 0 $medium-spacing 0;
+    line-height:1.2;
+}
+h3, .h3{
+    font-size:$small-heading;
+    font-weight:$bold;
+    margin:0 0 $small-spacing 0;
+    line-height:1.2;
+    @include breakpoint(mobile){
+        font-size:$small-heading*0.9;
+    }
+}
+h4, .h4{
+    font-size:2rem;
+    font-weight:$bold;
+    line-height:1.3;
+    margin:0 0 $small-spacing 0;
+}
+h5, .h5{
+    font-size:$large-body-text;
+    font-weight:$bold;
+    margin:0 0 $x-small-spacing 0;
+}
+h6, .h6{
+    font-weight: bold;
+    font-size:$large-body-text;
+    margin:0 0 $x-small-spacing*0.5 0;
+}
+
+p{
+    font-size: $body-text;
+    margin:1.5rem 0;
+    line-height: 1.6;
+}
+
+p:first-of-type{margin-top:0;}
+p:last-of-type{margin-bottom:0;}
+
+p + h2, p + h3, p + h4, p + h5, p + h6{
+    margin-top:$medium-large-spacing;
+}
+
+.text-highlight{color:$accent-color;}
+.bold{font-weight:bold;}
+
+.tagline{
+    font-size:2.2rem;
+    line-height:1.3;
+    @include breakpoint(tablet) {
+        font-size:2rem;
+    }
+}
+
+.mobile-break{
+    @include breakpoint(small-desktop){
+        overflow-wrap:break-word;
+    }
+}
+
+a{
+    color:$text-color;
+    text-decoration: underline;
+    &:hover{
+        color:$secondary-color;
+    }
+}
+
+ul{}
+ol{}
+li{}

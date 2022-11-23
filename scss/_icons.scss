@@ -1,0 +1,59 @@
+.icon {
+  @include smooth;
+
+  fill: $black;
+  width: .9375em;
+  height: .9375em;
+  overflow: hidden;
+  vertical-align: -.12em;
+  backface-visibility: hidden;
+
+  &.circle{
+    width: 44px;
+    height: 44px;
+  }
+
+  .dark &{
+    fill: white;
+  }
+
+  h2 &,
+  h3 &{
+    width: 1.333333333em;
+    height: 1.333333333em;
+    margin-right: .416666667em;
+  }
+
+
+  &.after{
+    margin-left: .277777778em;
+  }
+
+  &.before{
+    margin-right: .277777778em;
+  }
+
+  &.inline{
+    width: .666666667em;
+    height: .666666667em;
+    vertical-align: baseline;
+  }
+
+  a:hover &{
+    fill: $black;
+  }
+
+
+  &.responsive{
+    width: 100%;
+    height: auto;
+  }
+
+
+  .reverse &{
+    fill: white;
+  }
+
+}
+
+

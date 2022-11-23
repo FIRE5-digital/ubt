@@ -1,0 +1,164 @@
+/* ==========================================================================
+Tabs More Search CSS
+========================================================================== */
+
+// dependencies = 
+
+// form
+.search-form{
+	@include primary-section-colors;
+	padding:$small-spacing*2;
+	border-radius: 0 0 32px 32px;
+	// @include breakpoint(min-laptop){
+	// 	padding:$small-spacing*2;
+	// }
+
+	.form-main{
+		overflow:auto;
+		margin:-$small-spacing/2 -$small-spacing;
+		@include breakpoint(min-small-desktop){
+			margin:-$small-spacing/4;
+		}
+		@include breakpoint(min-laptop){
+			margin:-$small-spacing;
+		}
+	}
+
+	.form-extra{
+		display: none
+	}
+
+	.form-group{
+		padding:$small-spacing/2 $small-spacing;
+		
+		&:last-of-type{
+			margin-bottom:0;
+		}
+
+		@include breakpoint(min-small-desktop){
+			width:20%;
+			margin-bottom:0;
+			float:left;
+			padding:$small-spacing/4;
+			box-sizing:border-box;
+
+			&:last-of-type{
+				margin-right:0;
+			}
+			
+		}
+		@include breakpoint(min-laptop){
+			padding:$small-spacing;
+		}
+
+	}
+
+	.button{
+		display: block;
+		width:100%;
+	}
+}
+
+//tabs
+
+.search-tabs{
+	display: flex;
+	color:$text-color;
+	.search-tab{
+		text-align:center;
+		background-color:mix($grey, $accent-color, 90%);
+		padding:0 $small-spacing*3;
+		align-self: center;
+		@include breakpoint(tablet){
+			padding:0;
+			flex:1;
+		}
+
+		&:hover{
+			background-color:mix($grey, $accent-color, 75%);
+			cursor: pointer;
+		}
+
+		&.active{
+			background-color:$bg-color;
+			&:hover{
+				cursor: inherit;
+			}
+		}
+		h4{
+			display: inline-block;
+			margin:$small-spacing/4 0;
+			padding:$small-spacing;
+			
+			@include breakpoint(laptop){
+				margin:$small-spacing/2 0;
+			}
+			@include breakpoint(small-desktop){
+				span{display:none;}
+			}
+		}
+
+	}
+
+	.search-car{
+		h4{
+			background-image: url('../img/icons/car.svg');
+			padding-left: 80px;
+			background-repeat: no-repeat;
+			background-position: left center;
+			background-size: auto 30px;
+		}
+	}
+	.search-van{
+		h4{
+			background-image: url('../img/icons/van.svg');
+			padding-left: 80px;
+			background-repeat: no-repeat;
+			background-position: left center;
+			background-size: auto 30px;
+		}
+	}
+
+	.search-form-more{
+		@include breakpoint(small-desktop){
+			display:none;
+		}
+	}
+}
+
+//more
+.search-form-more{
+	text-align: center;
+	background:none!important;
+	.button{
+		font-size: $body-text;
+		border-radius:0 0 15px 15px;
+		padding-top:$small-spacing;
+		padding-bottom:$small-spacing;
+		@include breakpoint(small-desktop){
+			background-color: inherit;
+			color:$text-color;
+			text-decoration: underline;
+			font-weight: normal;
+		}
+	}
+}
+
+.vehicle-search.active{
+	.form-extra{
+		display: block;
+	}
+}
+
+
+//home form
+
+.full-header, .offer-header{
+	.search-tabs{
+		display: flex;
+		.search-tab{
+			flex:1;
+		}
+	}
+}
+// custom - anything site specific

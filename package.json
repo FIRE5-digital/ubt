@@ -1,0 +1,48 @@
+{
+  "name": "fleete",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts/main.min.js",
+  "browserslist": [
+    "> 1%",
+    "last 8 version"
+  ],
+  "scripts": {
+    "compile:watch": "gulp watcher",
+    "compile:html": "gulp html",
+    "compile:css": "gulp css",
+    "compile:js": "gulp js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FIRE5-digital/fleete.git"
+  },
+  "author": "FIRE5 DIGITAL",
+  "homepage": "https://www.fleet-e.co.uk/",
+  "dependencies": {
+    "autoprefixer": "^10.2.4",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "autoprefixer": "^10.2.4",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-changed": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify-es": "^2.0.0",
+    "gulp-version-number": "^0.2.4",
+    "postcss": "^8.1.1"
+  },
+  "presets": [
+    "@babel/preset-env"
+  ]
+}

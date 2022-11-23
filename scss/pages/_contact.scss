@@ -1,0 +1,116 @@
+/* ==========================================================================
+Contact CSS
+========================================================================== */
+
+#map{
+	height:100vh;
+}
+
+.contact-details{
+	@include section-spacing;
+	
+	.contact-details-ctr{
+	    margin-top: -30vh;
+	    position: relative;
+	    display: flex;
+	    flex-direction: row-reverse;
+	    //flex-wrap: wrap;
+
+	    @include breakpoint(desktop){
+	    	
+	    }
+
+	    @include breakpoint(tablet){
+	    	display: block;
+	    }
+
+	    .contact-header{
+	    	width:100%;
+	    	padding:$spacing;
+	    	@include tertiary-section-colors;
+	    	border-radius:20px 20px 0 0;
+	    }
+
+	    .contact-info{
+	    	min-width:34%;
+	    	padding:$pad;
+	    	box-sizing:border-box;
+	    	@include secondary-section-colors;
+	    	@include breakpoint(min-desktop){
+	    		border-radius: 0 0 0 20px;
+	    	}
+	    	@include breakpoint(desktop){
+	    		width: 100%;
+	    	}
+	    	
+	    	> div{
+	    		margin-bottom:$spacing/2;
+	    		padding-left: 70px;
+	    		p {
+	    			margin:$small-spacing/2 0;
+	    			&:first-of-type{
+	    				font-weight: 600;
+	    				margin-bottom: 0;
+	    			}
+	    			&:last-of-type{
+	    				margin-top: 0;
+	    				margin-bottom: $small-spacing;
+	    				padding-top: $small-spacing/2;
+	    				padding-bottom: $small-spacing;
+	    			}
+	    		}
+	    	}
+
+	    	.opening-times{
+	    		background:url('../img/icons/general/clock.svg') no-repeat top left;
+	    		background-size:40px;
+	    	}
+	    	.contact-numbers{
+	    		background:url('../img/icons/general/phone-call.svg') no-repeat top left;
+	    		background-size:37px;
+	    	}
+	    	.email-info{
+	    		background:url('../img/icons/general/email.svg') no-repeat top left;
+	    		background-size:37px;
+	    	}
+	    	.address-info{
+	    		background:url('../img/icons/general/location.svg') no-repeat top left;
+	    		background-size:46px;
+	    	}
+	    }
+	    .contact-details-form{
+	    	flex-grow:1;
+	    	padding:$pad;
+	    	background-color:white;
+	    	@include breakpoint(min-desktop){
+		    	border-radius: 0 0 38px 0;
+		    }
+	    }
+	}
+}
+
+.contact-form{
+	padding-bottom:$pad;
+	h3{
+		margin-top:0;
+	}
+	.form-group{
+		margin:$small-spacing*2 0;
+	}
+	label{
+		margin-bottom:$small-spacing;
+		color: white;
+	}
+	.form-control{
+		color:$text-color;
+		background-color:$alt-color;
+		border-color:$alt-color;
+		&:focus{
+			background-color:$bg-color;
+		}
+	}
+	textarea.form-control{
+		//border-radius:38px;
+		height:200px;
+	}
+}

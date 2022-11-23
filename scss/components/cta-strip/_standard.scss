@@ -1,0 +1,29 @@
+/* ==========================================================================
+Standard CTA CSS
+========================================================================== */
+
+// dependencies = 
+
+.cta-strip{
+	@include section-spacing;
+	@include secondary-section-colors;
+	text-align: center;
+	background-image: url('../img/dots-bg.png');
+	background-repeat: repeat-x;
+	background-size: cover;
+	background-position: center;
+	h1{
+		margin-bottom:30px;
+	}
+	a{
+		margin-top:30px;
+	}
+	p{
+		max-width: 540px;
+		margin-left:auto;
+		margin-right:auto;
+		line-height:180%;
+	}
+}
+
+// custom - anything site specific

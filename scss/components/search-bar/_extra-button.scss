@@ -1,0 +1,217 @@
+/* ==========================================================================
+Extra Button Search CSS
+========================================================================== */
+
+// dependencies = 
+
+// form
+.search-results-form{
+	@include primary-section-colors;
+	background-color:transparent;
+
+	.form-main{
+		@include breakpoint(min-mobile){
+			flex-wrap:wrap;
+			display: flex;
+			margin:($small-spacing/3)*-1 $small-spacing*-0.5;
+			
+		}
+
+		@include breakpoint(min-small-desktop){
+			margin:($small-spacing/2)*-1 $small-spacing*-0.75;
+		}
+	}
+
+	.form-group{
+		@include breakpoint(min-mobile){
+			width:50%;
+			box-sizing:border-box;
+			padding:$small-spacing/3 $small-spacing*0.5;
+			margin-bottom:0;
+			box-sizing:border-box;
+		}
+		@include breakpoint(min-small-desktop){
+			width:20%;
+			padding:$small-spacing/2 $small-spacing*0.75;
+		}
+		label{
+			color:$secondary-color;
+		}
+		.select-css{
+			background-image:url('../img/icons/general/down-red.svg'), linear-gradient(to bottom, $bg-color 0%, $bg-color 100%);
+		}
+
+	}
+}
+
+
+// home page search-cnd
+.full-header-search{
+
+	@include breakpoint(min-large-desktop){
+		@include primary-section-colors;
+		padding:$section-spacing;
+		border-radius:$border-radius;
+	}
+
+	.search-form{
+		@include breakpoint(min-large-desktop){
+			display: flex;
+		}
+		form{
+			@include breakpoint(min-large-desktop){
+				flex-grow:1;
+			}
+		}
+
+		.form-main{
+			border-radius:$border-radius;
+			background-color:$bg-color;
+			padding:$pad $pad 0 $pad;
+
+			@include breakpoint(min-small-desktop){
+				padding:$section-spacing/2;
+				display:flex;
+			}
+			
+			@include breakpoint(min-large-desktop){
+				padding:0;
+				background-color:transparent;
+			}
+			
+
+			@include breakpoint(min-large-desktop){
+				margin:$small-spacing*-0.5;
+			}
+
+			button{
+				width:100%;
+				box-sizing:content-box;
+				margin:0 $pad*-1 0 $pad*-1;
+				padding-left:$pad;
+				padding-right:$pad;
+				border-radius:0 0 $border-radius $border-radius;
+				@include breakpoint(min-small-desktop){
+					box-sizing:border-box;
+					margin:0;
+					border-radius:$border-radius;
+				}
+				@include breakpoint(min-small-desktop){
+					white-space:nowrap;
+				}
+			}
+			
+		}
+
+		.form-group{
+			flex-grow:1;
+			@include breakpoint(min-small-desktop){
+				margin-bottom:0;
+				padding:$small-spacing/2;
+			}
+			label{
+				color:$secondary-color;
+			}
+			.select-css{
+				background-image:url('../img/icons/general/down-red.svg'), linear-gradient(to bottom, $bg-color 0%, $bg-color 100%);
+			}
+			&:last-of-type{
+				flex-grow:0;
+				@include breakpoint(min-tablet){
+					margin-bottom:5px;
+				}
+			}	
+		}
+		
+		.form-extra{
+			text-align:center;
+			@include breakpoint(min-large-desktop){
+				align-items:center;
+				display:flex;
+			}
+			span{
+				font-weight:bold;
+				text-transform:uppercase;
+				padding: $small-spacing;
+				color:$bg-text-color;
+				display: none;
+				padding:$small-spacing;
+				@include breakpoint(min-tablet){
+					display:block;
+				}
+				
+				@include breakpoint(min-large-desktop){
+					padding: $small-spacing/2;
+					color:$tertiary-color;
+				}
+			}
+			[class^="button"]{
+				white-space:nowrap;
+				@include breakpoint(mobile){
+					padding-left:10px;
+					padding-right:10px;
+					display:flex;
+					justify-content:center;
+				}
+			}
+		}
+
+		[class^="button"]{
+			@include breakpoint(min-large-desktop){
+				padding-left:($small-spacing/3)*4;
+				padding-right:($small-spacing/3)*4;
+			}
+		}
+		
+	}
+	
+}
+
+.full-header-search{
+	// .search-form{
+	// 	@include breakpoint(min-laptop){
+	// 		display:flex;
+	// 	}
+
+	// 	form{
+	// 		@include breakpoint(min-small-desktop){
+	// 			flex-grow:1;
+	// 			padding-bottom:0!important;
+	// 		}
+	// 	}
+	// 	.form-main{
+	// 		@include breakpoint(min-tablet){
+	// 			margin:0;
+
+	// 		}
+	// 		@include breakpoint(min-small-desktop){
+	// 			display:flex;
+	// 		}
+	// 	}
+	// 	.form-group{
+	// 		@include breakpoint(min-mobile){
+	// 			width:100%;
+	// 		}
+	// 		@include breakpoint(min-tablet){
+	// 			padding:0;
+	// 			margin-bottom:$pad;
+	// 		}
+			
+	// 		@include breakpoint(min-small-desktop){
+	// 			width:auto;
+	// 			flex:1;
+	// 			margin-bottom:0;
+	// 		}
+
+	// 		&:last-of-type{
+	// 			margin-bottom:0;
+	// 		}
+	// 	}
+	// 	[class^="button"]{
+	// 		@include breakpoint(min-small-desktop){
+	// 			white-space:nowrap;
+	// 		}
+	// 	}
+	// }
+}
+// custom - anything site specific

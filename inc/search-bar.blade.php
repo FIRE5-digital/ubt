@@ -1,0 +1,39 @@
+<div class="search-bar-hero">
+    <div class="ctr">
+        <div class="search-form">
+            <form class="form" action="/search">
+                <div class="legend">Search for vehicles</div>
+                <input type="hidden" id="search-type" name="search-type" value="Car">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="visuallyhidden" for="make">Make</label>
+                        {!! Form::select('make', [''=>'Any Make']+(@$makes?:[]), @\Request::input('make'), ['class'=>'form-control select-css']) !!}
+                    </div>
+                    <div class="form-group">
+                        <label class="visuallyhidden" for="model">Model</label>
+                        {!! Form::select('model', [''=>'Any Model']+(@$models?:[]), @\Request::input('model'), ['class'=>'form-control select-css']) !!}
+                    </div>
+                    <div class="form-group">
+                        <label class="visuallyhidden" for="budget">Budget</label>
+                        {!! Form::select('budget', [
+							''=>'Any Budget',
+							'0-150' => 'upto £150 pm',
+							'150-200' => '£150-£200 pm',
+							'200-250' => '£200-£250 pm',
+							'250-300' => '£250-£300 pm',
+							'300-350' => '£300-£350 pm',
+							'350-400' => '£350-£400 pm',
+							'400-500' => '£400-£500 pm',
+							'500+' => 'Above £500 pm'
+						], @\Request::input('budget'), ['class'=>'form-control select-css']) !!}
+                    </div>
+                    <div class="form-controls">
+                        <button class="button-accent">
+                            <span class="search">Search</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

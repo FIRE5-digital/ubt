@@ -1,0 +1,94 @@
+/* ==========================================================================
+Latest Offers Strip CSS
+========================================================================== */
+
+.latest-offers-strip{
+	@include section-spacing;
+	.latest-offers-strip-ctr{
+		display: grid;
+	    grid-template-columns: repeat(4, 1fr);
+	    grid-gap: 30px;
+
+	    @include breakpoint(laptop) {
+	        grid-template-columns: repeat(3, 1fr);
+	    }
+
+	    @include breakpoint(desktop) {
+	        grid-template-columns: repeat(3, 1fr);
+	    }
+
+	    @include breakpoint(tablet) {
+	        grid-template-columns: repeat(2, 1fr);
+	    }
+
+	    @include breakpoint(mobile) {
+	        grid-template-columns: repeat(1, 1fr);
+	    }
+		
+		> div:last-of-type{
+			@include breakpoint(laptop){
+				display:none;
+			}
+
+			@include breakpoint(tablet){
+				display:flex;
+			}
+		}
+
+
+		.deal-box {
+			width: 100%;
+			margin: 0 !important;
+
+
+		}
+	}
+	.latest-offer-intro{
+		@include short-section-bottom;
+		display: flex;
+		align-items: center;
+		&:before{
+			content:'';
+			margin-right:$medium-spacing;
+			width:65px;
+			height:72px;
+		    background-image: url('../img/icons/general/star-white.svg'), url('../img/icons/general/green-hex.svg');
+		    background-size: 50%, 100%;
+		    background-repeat:no-repeat;
+		    background-position:center;
+		    flex-shrink:0;
+		    @include breakpoint(mobile){
+		    	width:42px;
+		    	margin-right:$small-spacing;
+		    }
+		}
+		h1{
+			@include breakpoint(mobile){
+		    	margin-bottom:0;
+		    }
+		}
+		p{
+			@include breakpoint(tablet){
+				display:none;
+			}
+		}
+	}
+
+	.more-offers {
+		padding-top: 40px;
+		text-align: center;
+		width: 100%;
+	
+		padding-top:$section-spacing;
+		
+		@include breakpoint(tablet){
+			padding-top:$medium-large-spacing;
+			
+		}
+		@include breakpoint(mobile){
+			padding-top:$medium-spacing;
+			
+		}
+
+	}
+}

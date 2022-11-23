@@ -1,0 +1,88 @@
+ /* ==========================================================================
+   Button CSS
+   ========================================================================== */
+
+[class^="button"],
+[class^="btn"]{
+    display: inline-block;
+    background-color:$secondary-color;
+    color:$bg-text-color;
+    text-decoration: none;
+    font-size: $body-text;
+    font-weight: bold;
+    padding: 10px $medium-spacing;
+    text-align:center;
+    border:0;
+    border-radius: $border-radius;
+    text-decoration:none!important;
+    &:hover{
+        cursor: pointer;
+    	background-color:lighten($secondary-color, 5%);
+        color:$bg-text-color;
+    }
+
+    &[class*="accent"]{
+        background-color:$accent-color;
+        &:hover{
+            background-color:lighten($accent-color, 5%);
+        }
+    }
+
+    &[class*="tertiary"]{
+        background-color:$tertiary-color;
+        &:hover{
+            background-color:lighten($tertiary-color, 5%);
+        }
+    }
+
+    &[class*="accent-line"]{
+        border: 2px solid $accent-color;
+        color:$accent-color;
+        background-color:$bg-color;
+        &:hover{
+            color:$accent-color;
+            background-color:rgba($bg-color, 0.9);
+        }
+    }
+    &[class*="tertiary-line"]{
+        border: 2px solid $tertiary-color;
+        color:$tertiary-color;
+        background-color:$bg-color;
+        &:hover{
+            color:$tertiary-color;
+            background-color:rgba($bg-color, 0.9);
+        }
+    }
+    &[class*="secondary-line"]{
+        border: 2px solid $secondary-color;
+        color:$secondary-color;
+        background-color:$bg-color;
+        &:hover{
+            color:$secondary-color;
+            background-color:rgba($bg-color, 0.9);
+        }
+    }
+
+    &[class*="block"]{
+        width: 100%;
+    }
+}
+
+[class^="button-small"]{
+    padding:$small-spacing*0.5 $medium-spacing*0.5;
+    font-size: $small-body-text;
+}
+
+[class^="button-large"]{
+    padding:$small-spacing $medium-spacing;
+    font-size:$large-body-text;
+}
+
+.text-link{
+    border:0;
+    background:transparent;
+    padding:0;
+    font-weight:bold;
+    color:$secondary-color;
+    text-align:center;
+}

@@ -1,0 +1,118 @@
+/* ==========================================================================
+Quote Form CSS
+========================================================================== */
+
+.quote-enquiry{
+	@include section-spacing;
+	padding-top:$medium-large-spacing;
+
+	h1{
+		margin-bottom:$small-spacing;
+	}
+
+	.form-errors{
+		background: $error-color;
+		color:$bg-text-color;
+		padding: 1px 0;
+	}
+
+	.form-holder{
+		display: flex;
+		flex-direction: row-reverse;
+
+		@include breakpoint(small-desktop){
+			flex-direction: column;		
+		}
+
+		> div{
+			flex-grow: 1;
+			width: 50%;
+			@include breakpoint(small-desktop){
+				width:100%;
+			}
+		}
+
+		.quote-details {
+			@include breakpoint(small-desktop){
+				width: 100%;
+			}
+
+			.quote-details-ctr{
+				padding:$medium-large-spacing;
+				@include secondary-section-colors;
+				position:sticky;
+				top:0;
+				border-radius:$border-radius;
+				@include breakpoint(small-desktop) {
+					padding:$medium-spacing;
+					display: none;
+					margin-bottom:$small-spacing;	
+					&.visible {
+						display: block!important;
+					}
+				}
+				@include breakpoint(mobile) {
+					margin-bottom:$small-spacing;
+				}
+			}
+
+			.view-summary {
+				display: none;
+				@include breakpoint(small-desktop) {
+					max-width: 100%;
+					display:inline-flex;
+					margin-bottom:$medium-spacing;
+				}
+				@include breakpoint(mobile) {
+					margin-bottom:$small-spacing;
+				}
+			}
+
+			table {
+				margin:0;
+				
+				tr {
+					border-color:rgba($bg-text-color, 0.9);
+					th {
+						@include breakpoint(small-desktop) {
+							display: table-row;
+						}
+					}
+
+					td {
+						&.pre {
+							white-space: pre-line;
+						}
+					}
+				}
+			}
+		}
+
+		.quote-info {
+			padding-right: $pad*2;
+
+			@include breakpoint(small-desktop) {
+				padding-left: 0;
+				padding-top: $small-spacing;
+				width: 100%;
+			}
+			
+			
+			.form-group {
+				label {
+					&.required {
+						&:after {
+							content: ' *';
+							color:$error-color;
+							font-weight: bold;
+						}
+					}
+				}
+				textarea.form-control{
+					height:200px;
+				}
+			}
+
+		}
+	}
+}
