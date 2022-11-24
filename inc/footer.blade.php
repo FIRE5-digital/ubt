@@ -1,6 +1,6 @@
 <!-- footer -->
 @if(\Request::path()!='contact'&&is_null(@$derivative))
-<{{-- section class="footer-enquiry contact-details-form">
+{{-- <section class="footer-enquiry contact-details-form">
     <div class="ctr">
         <div class="footer-enquiry-form contact-content">
             <h1>Get in touch, we’re here to help</h1>
