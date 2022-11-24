@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/themes/ubt/css/app.min.css?v=20220912124629">
+<link rel="stylesheet" href="/themes/ubt/css/app.min.css?v=20220912124640">
 
 <style>
   .grecaptcha-badge {
