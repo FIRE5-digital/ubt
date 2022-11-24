@@ -3,7 +3,7 @@
         <!-- OPTIONAL CLASSES: dark -->
         <header class="site-header ctr">
             <!-- OPTIONAL CLASSES: transparent, below -->
-            <div class="top-bar transparent">
+            <div class="top-bar transparent hidden hide">
                 <div class="top-bar-wrapper">
                     <div class="top-bar-container">
                         <ul class="top-bar-items layout inline-list">
@@ -26,14 +26,14 @@
                                 </a>
                             </li>
     
-                            <li>
+                            {{-- <li>
                                 <svg class="icon before">
                                     <use xlink:href="/themes/ubt/img/sprite.svg#icon-clock"></use>
                                 </svg>
         
                                 Monday - Friday : 09:00 - 17:00
                             </li>
-    
+     --}}
                             {{-- <li>
                                 <a href="#">
                                     <svg class="icon">
@@ -148,7 +148,7 @@
         
         @if(@$page->name=='Home')
         <!-- MISSION STATEMENTS -->
-        <div class="mission-statements">
+        <div class="mission-statements hidden hide">
             <ul>
                 <li>
                     <svg class="icon">

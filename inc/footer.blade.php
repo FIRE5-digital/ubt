@@ -1,6 +1,6 @@
 <!-- footer -->
 @if(\Request::path()!='contact'&&is_null(@$derivative))
-<section class="footer-enquiry contact-details-form">
+<{{-- section class="footer-enquiry contact-details-form">
     <div class="ctr">
         <div class="footer-enquiry-form contact-content">
             <h1>Get in touch, we’re here to help</h1>
@@ -39,13 +39,13 @@
             <p>A member of our team will be in touch as soon as possible</p>
         </div>
     </div>
-</section>
+</section> --}}
 @endif
 <footer class="site-footer">
     <div class="ctr">
         <div class="footer-links">
             <div class="footer-logo">
-                <img src="/themes/ubt/img/logo-mono.png" alt="{{ config('company.name') }}" width="" height="">
+                <img src="/themes/ubt/img/logo2@.png" alt="{{ config('company.name') }}" width="" height="">
             </div>
             <div class="footer-links-list">
                 <div class="footer-contact">

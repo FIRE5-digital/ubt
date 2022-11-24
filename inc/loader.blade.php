@@ -45,7 +45,7 @@
         justify-content: center;
     }
     .circles span{
-        border:3px solid #58C25F;
+        border:3px solid ##00ab4e;
         border-radius: 20px;
         animation: rtb 1.5s infinite ease-in-out;
         width:16px;
@@ -68,7 +68,7 @@
     @keyframes rtb {
         20%   {border-color: #83D653; width:16px; height:16px;}
         60%  {border-color: #ffffff; width:5px; height:5px;}
-        100% {border-color: #58C25F; width:16px; height:16px;}
+        100% {border-color: #00ab4e; width:16px; height:16px;}
     }
 
     @keyframes rotation {
@@ -92,7 +92,7 @@
 
 <div class="loader-ctr">
     <div class="loader">
-        <img src="/themes/ubt/img/logo-mono.png" alt="Fleet-E">
+        <img src="/themes/ubt/img/logo@2x.png" alt="{{ config('company.name') }}">
         <div class="circles">
             <div><span></span></div>
             <div><span></span></div>
