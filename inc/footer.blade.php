@@ -45,7 +45,7 @@
     <div class="ctr">
         <div class="footer-links">
             <div class="footer-logo">
-                <img src="/themes/ubt/img/logo2@.png" alt="{{ config('company.name') }}" width="" height="">
+                <img src="/themes/ubt/img/logo@2x.png" alt="{{ config('company.name') }}" width="" height="">
             </div>
             <div class="footer-links-list">
                 <div class="footer-contact">

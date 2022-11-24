@@ -6,7 +6,7 @@
     }
     .loader-ctr{
         opacity:1;
-        background-color: #222429;
+        background-color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
